@@ -1,0 +1,20 @@
+package com.lukabaia.yummy.network
+
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+
+object RetrofitInstance {
+
+    private const val BASE_URL = "https://api.spoonacular.com/"
+
+    private val instance by lazy {
+        Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+
+    @Synchronized
+    fun getRandomRecipesApi(): RandomRecipesApi = instance.create(RandomRecipesApi::class.java)
+
+}
