@@ -7,4 +7,18 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    // yummy colors
+    <color name="orange">#FA4A0C</color>
+    <color name="grey">#909090</color>
+    <color name="orange_light">#F47B0A</color>
+    <color name="red">#DF2C2C</color>
+    <color name="grey_note">#EDEDED</color>
+    <color name="pink">#EB4796</color>
+    <color name="blue">#0038FF</color>
+    <color name="grey_1">#9F9F9F</color>
+    <color name="grey_2">#C4C4C4</color>
+    <color name="grey_icon">#BABABA</color>
+
+
 </resources>
