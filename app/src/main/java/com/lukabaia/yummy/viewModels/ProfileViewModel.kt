@@ -1,4 +1,4 @@
-package com.lukabaia.yummy.ui.fragments.profile
+package com.lukabaia.yummy.viewModels
 
 import androidx.lifecycle.ViewModel
 

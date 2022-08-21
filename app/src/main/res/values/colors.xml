@@ -19,6 +19,7 @@
     <color name="grey_1">#9F9F9F</color>
     <color name="grey_2">#C4C4C4</color>
     <color name="grey_icon">#BABABA</color>
+    <color name="red_background">#ff4b3a</color>
 
 
 </resources>

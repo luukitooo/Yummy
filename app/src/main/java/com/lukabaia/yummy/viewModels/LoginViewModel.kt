@@ -1,4 +1,4 @@
-package com.lukabaia.yummy.ui.fragments.login
+package com.lukabaia.yummy.viewModels
 
 import androidx.lifecycle.ViewModel
 

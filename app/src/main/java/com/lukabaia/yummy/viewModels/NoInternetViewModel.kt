@@ -1,4 +1,4 @@
-package com.lukabaia.yummy.ui.fragments.noInternet
+package com.lukabaia.yummy.viewModels
 
 import androidx.lifecycle.ViewModel
 
