@@ -17,4 +17,8 @@ object RetrofitInstance {
     @Synchronized
     fun getRandomRecipesApi(): RandomRecipesApi = instance.create(RandomRecipesApi::class.java)
 
+    @Synchronized
+    fun getDetailedRecipesApi() : DetailedRecipesApi = instance.create(DetailedRecipesApi::class.java)
+
+
 }
