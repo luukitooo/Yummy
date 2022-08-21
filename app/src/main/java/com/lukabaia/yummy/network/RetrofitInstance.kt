@@ -1,5 +1,6 @@
 package com.lukabaia.yummy.network
 
+import com.lukabaia.yummy.model.SearchedRecipesInfo
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -19,6 +20,9 @@ object RetrofitInstance {
 
     @Synchronized
     fun getDetailedRecipesApi() : DetailedRecipesApi = instance.create(DetailedRecipesApi::class.java)
+
+    @Synchronized
+    fun getSearchedRecipesApi() : SearchRecipesApi = instance.create(SearchRecipesApi::class.java)
 
 
 }

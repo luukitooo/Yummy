@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/red_background"
     tools:context=".ui.fragments.welcome.WelcomeFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/oval"
         android:backgroundTint="@color/white"
-        android:padding="20dp"
+        android:padding="10dp"
         android:src="@mipmap/logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,48 +24,53 @@
         android:id="@+id/appCompatTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="190dp"
         android:fontFamily="@font/actor_regular"
         android:text="YUMMY"
         android:textColor="@color/white"
-        android:textSize="65sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+        app:layout_constraintStart_toStartOf="@+id/img_logo"
+        app:layout_constraintTop_toBottomOf="@+id/img_logo" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="45dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="170dp"
-        android:layout_marginBottom="60dp"
-        android:src="@mipmap/ratatui2"
-        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView"
-        app:layout_constraintStart_toStartOf="@+id/appCompatTextView" />
-
-    <androidx.appcompat.widget.AppCompatImageView
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="4dp"
-        android:paddingEnd="140dp"
-        android:src="@mipmap/ratatui"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/btnStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:src="@mipmap/intro_man" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:src="@mipmap/intro_woman" />
+
+    </FrameLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_start"
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-        android:layout_width="314dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="56dp"
+        android:id="@+id/btnStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="30dp"
         android:backgroundTint="@color/white"
         android:fontFamily="@font/actor_regular"
+        android:paddingVertical="22dp"
         android:text="Get Started"
+        android:textAllCaps="false"
         android:textColor="@color/orange_light"
-        android:textSize="19sp"
+        android:textSize="20sp"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="@color/orange_light" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

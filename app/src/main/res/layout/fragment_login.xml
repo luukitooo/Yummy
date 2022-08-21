@@ -1,70 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:background="@color/grey_icon"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/grey_note"
+    android:orientation="vertical"
     tools:context=".ui.fragments.login.LoginFragment">
 
     <FrameLayout
+        android:id="@+id/frameLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
-            android:layout_height="350dp"
-            app:cornerRadius="30dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_bottom_radius"
+            android:backgroundTint="@color/white"
             android:paddingHorizontal="140dp"
+            android:paddingVertical="50dp"
             android:paddingBottom="60dp"
-            android:src="@mipmap/logo"
-            android:background="@drawable/ic_rectangle_register"
-            android:backgroundTint="@color/white"/>
+            android:src="@mipmap/logo" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="50dp">
+            android:layout_marginBottom="16dp">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_login"
+                android:id="@+id/tvLogin"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:singleLine="true"
                 android:text="Login"
-                android:gravity="center"
-                android:textSize="19sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/orange"
+                android:textSize="19sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_sign_up"
+                android:id="@+id/tvSignUp"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:text="Sign_up"
                 android:gravity="center"
+                android:paddingEnd="8dp"
+                android:singleLine="true"
+                android:text="Sign-up"
                 android:textColor="@color/black"
                 android:textSize="19sp" />
         </LinearLayout>
     </FrameLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_email"
+        android:id="@+id/tilEmail"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginVertical="10dp"
-        android:paddingHorizontal="20dp"
-        app:boxStrokeWidth="1dp"
+        android:layout_marginHorizontal="40dp"
         android:hint="Email address"
-        app:boxStrokeWidthFocused="4dp">
+        app:boxBackgroundColor="@color/grey_note"
+        app:boxStrokeColor="@color/orange"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeWidthFocused="2dp"
+        app:hintTextColor="@color/orange"
+        app:layout_constraintBottom_toTopOf="@+id/tilPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_email"
-            android:layout_marginTop="10dp"
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -75,19 +84,25 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_password"
+        android:id="@+id/tilPassword"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
+        android:layout_marginHorizontal="40dp"
         android:layout_marginVertical="10dp"
-        android:paddingHorizontal="20dp"
-        app:boxStrokeWidth="1dp"
         android:hint="Password"
-        app:boxStrokeWidthFocused="4dp">
+        app:boxBackgroundColor="@color/grey_note"
+        app:boxStrokeColor="@color/orange"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeWidthFocused="2dp"
+        app:hintTextColor="@color/orange"
+        app:layout_constraintBottom_toTopOf="@+id/tvForgotPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilEmail">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_password"
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -98,32 +113,41 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_forgot_password"
+        android:id="@+id/tvForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/actor_regular"
         android:text="Forgot password?"
-        android:textSize="20sp"
-        android:layout_marginTop="30dp"
-        android:layout_marginHorizontal="30dp"
         android:textColor="@color/orange"
-        android:fontFamily="@font/actor_regular"/>
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/tilPassword"
+        app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_login"
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:id="@+id/btnLogin"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:layout_marginHorizontal="50dp"
-        android:layout_height="80dp"
-        android:layout_marginBottom="56dp"
-        android:fontFamily="@font/actor_regular"
-        android:text="Login"
-        android:layout_marginTop="100dp"
+        android:layout_marginBottom="22dp"
         android:backgroundTint="@color/orange"
+        android:fontFamily="@font/actor_regular"
+        android:paddingVertical="20dp"
+        android:text="Login"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="19sp"
+        android:textSize="20sp"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
