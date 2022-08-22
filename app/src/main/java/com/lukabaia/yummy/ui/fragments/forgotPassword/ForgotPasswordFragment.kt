@@ -10,15 +10,12 @@ class ForgotPasswordFragment : BaseFragment<FragmentForgotPasswordBinding>(Fragm
     private val viewModel: ForgotPasswordViewModel by viewModels()
 
     override fun listeners() {
-        TODO("Not yet implemented")
     }
 
     override fun init() {
-        TODO("Not yet implemented")
     }
 
     override fun observers() {
-        TODO("Not yet implemented")
     }
 
 }

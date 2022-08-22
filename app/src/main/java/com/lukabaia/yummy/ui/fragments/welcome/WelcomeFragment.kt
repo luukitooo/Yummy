@@ -24,5 +24,4 @@ class WelcomeFragment : BaseFragment<FragmentWelcomeBinding>(FragmentWelcomeBind
 
     }
 
-
 }

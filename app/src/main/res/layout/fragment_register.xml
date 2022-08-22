@@ -122,6 +122,7 @@
         app:boxBackgroundColor="@color/grey_note"
         app:boxStrokeColor="@color/orange"
         app:boxStrokeWidth="1dp"
+        app:endIconMode="password_toggle"
         app:boxStrokeWidthFocused="2dp"
         app:hintTextColor="@color/orange"
         app:layout_constraintBottom_toTopOf="@+id/tilRepeatPassword"
@@ -147,6 +148,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
         android:hint="Password"
+        app:endIconMode="password_toggle"
         app:boxBackgroundColor="@color/grey_note"
         app:boxStrokeColor="@color/orange"
         app:boxStrokeWidth="1dp"
@@ -169,7 +171,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnLogin"
+        android:id="@+id/btn_sign_up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -178,7 +180,7 @@
         android:backgroundTint="@color/orange"
         android:fontFamily="@font/actor_regular"
         android:paddingVertical="20dp"
-        android:text="Login"
+        android:text="Sign up"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"
