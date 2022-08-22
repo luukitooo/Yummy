@@ -14,6 +14,8 @@ class RecipeAdapter: ListAdapter<
         RecipeAdapter.RecipeViewHolder
         >(SearchRecipeItemCallback) {
 
+    var onItemClickListener: ((SearchedRecipesInfo.SearchedRecipe) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = RecipeViewHolder(
         ItemRecipeBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -33,6 +35,9 @@ class RecipeAdapter: ListAdapter<
                 val recipe = getItem(adapterPosition)
                 Glide.with(this.root).load(recipe.image).into(ivRecipe)
                 tvRecipeTitle.text = recipe.title
+                root.setOnClickListener {
+                    onItemClickListener?.invoke(recipe)
+                }
             }
         }
     }

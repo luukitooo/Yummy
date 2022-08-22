@@ -12,25 +12,18 @@ interface SearchRecipesApi {
     @Headers("Content-Type: application/json")
     suspend fun getDetailedRecipes(
         @Query("apiKey") apiKey: String,
-        @Query("query") query: String,
-        @Query("diet") diet: String,
-        @Query("type") type: String,
-        @Query("titleMatch") titleMatch: String,
-        @Query("maxReadyTime") maxReadyTime: Int,
-        @Query("minCarbs") minCarbs: Int,
-        @Query("maxCarbs") maxCarbs: Int,
-        @Query("minProtein") minProtein: Int,
-        @Query("maxProtein") maxProtein: Int,
-        @Query("minCalories") minCalories: Int,
-        @Query("maxCalories") maxCalories: Int,
-        @Query("number") number: Int,
+        @Query("query") query: String? = null,
+        @Query("diet") diet: String? = null,
+        @Query("type") type: String? = null,
+        @Query("titleMatch") titleMatch: String? = null,
+        @Query("maxReadyTime") maxReadyTime: Int? = null,
+        @Query("minCarbs") minCarbs: Int? = null,
+        @Query("maxCarbs") maxCarbs: Int? = null,
+        @Query("minProtein") minProtein: Int? = null,
+        @Query("maxProtein") maxProtein: Int? = null,
+        @Query("minCalories") minCalories: Int? = null,
+        @Query("maxCalories") maxCalories: Int? = null,
+        @Query("number") number: Int? = null,
     ): Response<SearchedRecipesInfo>
 
-    @GET("recipes/complexSearch")
-    @Headers("Content-Type: application/json")
-    suspend fun getPreviewRecipes(
-        @Query("apiKey") apiKey: String,
-        @Query("type") type: String,
-        @Query("number") number: Int,
-    ): Response<SearchedRecipesInfo>
 }

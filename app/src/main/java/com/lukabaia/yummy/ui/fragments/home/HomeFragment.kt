@@ -1,6 +1,7 @@
 package com.lukabaia.yummy.ui.fragments.home
 
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.lukabaia.yummy.adapter.CategoryAdapter
 import com.lukabaia.yummy.adapter.RecipeAdapter
 import com.lukabaia.yummy.databinding.FragmentHomeBinding
@@ -28,6 +29,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override fun listeners() {
         categoryAdapter.onItemClickListener = {
             getData(it.value)
+        }
+        recipeAdapter.onItemClickListener = {
+            findNavController().navigate(HomeFragmentDirections.toDetailedFragment(it.id ?: -1))
         }
     }
 
