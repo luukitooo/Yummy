@@ -22,21 +22,23 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
     }
 
     override fun init() {
+        // database
+        if (auth.currentUser?.uid.toString().isNotEmpty()) {
+            getUserData()
+        }
+    }
 
-        //database
-
-        binding.tvEmail.text = FirebaseAuth.getInstance().currentUser?.email
-
-        database.child(auth.currentUser?.uid!!).addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val userInfo = snapshot.getValue(UserInfo::class.java) ?: return
-
-                binding.tvUsername.text = userInfo.username
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-            }
-        })
+    private fun getUserData() {
+        database.child(auth.currentUser?.uid.toString())
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val userInfo = snapshot.getValue(UserInfo::class.java)!!
+                    binding.tvUsername.text = userInfo.username
+                    binding.tvEmail.text = userInfo.email
+                }
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
     }
 
     override fun observers() {

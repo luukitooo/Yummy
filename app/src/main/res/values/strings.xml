@@ -6,7 +6,7 @@
     <string name="success">\"You have registered successfully! \"</string>
     <string name="error">This mail is already used!</string>
     <string name="pass_not_match">Passwords do not match!</string>
-    <string name="login_error">You did not logg in!</string>
+    <string name="login_error">Email or password is not correct!</string>
     <string name="empty_fields_error">Please fill in all the fields!</string>
     <string name="invalid_email_error">Please enter the valid email!</string>
     <string name="logged_success">You have logged in successfully!</string>
