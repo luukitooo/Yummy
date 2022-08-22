@@ -11,7 +11,7 @@ class HomeRepository(
 ) {
 
     suspend fun getSearchResult(type: String, number: Int): SearchedRecipesInfo? {
-        val response = api.getPreviewRecipes(
+        val response = api.getDetailedRecipes(
             apiKey = application.resources.getString(R.string.api_key),
             type = type,
             number = number

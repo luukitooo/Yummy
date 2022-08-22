@@ -30,9 +30,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         categoryAdapter.onItemClickListener = {
             getData(it.value)
         }
-
-        binding.textView.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToProfileFragment())
+        recipeAdapter.onItemClickListener = {
+            findNavController().navigate(HomeFragmentDirections.toDetailedFragment(it.id ?: -1))
         }
     }
 

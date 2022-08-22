@@ -12,12 +12,8 @@ interface DetailedRecipesApi {
     @GET("recipes/{id}/information")
     @Headers("Content-Type: application/json")
     suspend fun getDetailedRecipes(
-        @Query("apiKey") apiKey: String,
         @Path("id") id: Int,
+        @Query("apiKey") apiKey: String,
         ): Response<DetailedRecipesInfo>
-
-
-
-
 
 }
