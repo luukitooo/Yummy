@@ -12,7 +12,7 @@ class WelcomeFragment : BaseFragment<FragmentWelcomeBinding>(FragmentWelcomeBind
 
     override fun listeners() {
         binding.btnStart.setOnClickListener {
-            findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToLoginFragment())
+            findNavController().navigate(WelcomeFragmentDirections.toLoginFragment())
         }
     }
 
