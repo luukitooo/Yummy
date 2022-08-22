@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "439543415860",
+    "project_id": "tbcproject-da345",
+    "storage_bucket": "tbcproject-da345.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:439543415860:android:26b78dc69a230684b47661",
+        "android_client_info": {
+          "package_name": "com.lukabaia.yummy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "439543415860-jgh3k0ub275gedeeqn0anadffi9sdohg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYmVdEoOW7y394VJhsrgTlsagFwSzM8dg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "439543415860-jgh3k0ub275gedeeqn0anadffi9sdohg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

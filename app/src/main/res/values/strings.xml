@@ -1,4 +1,7 @@
 <resources>
+    <!--API key-->
+    <string name="api_key">57a1de40704f4d8b8e0e98da3fd8d5f8</string>
+
     <string name="app_name">Yummy</string>
     <string name="success">\"You have registered successfully! \"</string>
     <string name="error">Email or password is incorrect!</string>
