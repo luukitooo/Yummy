@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/Yummy/app/src/main/res/drawable/ic_arrow_back.xml" value="0.312" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Yummy/app/src/main/res/layout/fragment_home.xml" value="0.23783783783783785" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Yummy/app/src/main/res/layout/fragment_profile.xml" value="0.23783783783783785" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Yummy/app/src/main/res/layout/fragment_register.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/drawable/ic_arrow_1.xml" value="0.1235" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/drawable/ic_arrow_right.xml" value="0.1235" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/drawable/ic_bi_credit_card_2_front_fill.xml" value="0.1235" />
