@@ -1,6 +1,5 @@
 package com.lukabaia.yummy.ui.fragments.profile
 
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -16,41 +15,30 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
 
     private val viewModel: NoInternetViewModel by viewModels()
 
-    override fun listeners() {
-        TODO("Not yet implemented")
-    }
-
     private val auth = FirebaseAuth.getInstance()
     private val database = FirebaseDatabase.getInstance().getReference("userInfo")
 
+    override fun listeners() {
+    }
+
     override fun init() {
 
-//        binding.tvEmail.text = FirebaseAuth.getInstance().currentUser?.email
-//
-//        val uid = auth.currentUser?.uid.toString()
-//        if (uid.isNotEmpty()){
-//            getUserData()
-//        }
-//        else {
-//            Toast.makeText(context, "error", Toast.LENGTH_SHORT).show()
-//        }
-    }
+        //database
 
-//    private fun getUserData(){
-//        database.child(auth.currentUser?.uid.toString()).addValueEventListener(object :
-//            ValueEventListener {
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                val userInfo = snapshot.getValue(UserInfo::class.java)!!
-//                binding.tvUsername.text = userInfo.username
-//            }
-//            override fun onCancelled(error: DatabaseError) {
-//            }
-//        })
-//
-//    }
+        binding.tvEmail.text = FirebaseAuth.getInstance().currentUser?.email
+
+        database.child(auth.currentUser?.uid!!).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val userInfo = snapshot.getValue(UserInfo::class.java) ?: return
+
+                binding.tvUsername.text = userInfo.username
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+            }
+        })
+    }
 
     override fun observers() {
-        TODO("Not yet implemented")
     }
-
 }
