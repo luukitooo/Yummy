@@ -10,7 +10,6 @@ interface SearchRecipesApi {
 
     @GET("recipes/complexSearch")
     @Headers("Content-Type: application/json")
-
     suspend fun getDetailedRecipes(
         @Query("apiKey") apiKey: String,
         @Query("query") query: String,
@@ -24,6 +23,14 @@ interface SearchRecipesApi {
         @Query("maxProtein") maxProtein: Int,
         @Query("minCalories") minCalories: Int,
         @Query("maxCalories") maxCalories: Int,
+        @Query("number") number: Int,
+    ): Response<SearchedRecipesInfo>
+
+    @GET("recipes/complexSearch")
+    @Headers("Content-Type: application/json")
+    suspend fun getPreviewRecipes(
+        @Query("apiKey") apiKey: String,
+        @Query("type") type: String,
         @Query("number") number: Int,
     ): Response<SearchedRecipesInfo>
 }
