@@ -1,12 +1,12 @@
 package com.lukabaia.yummy.model
 
 data class SearchedRecipesInfo(
-    val results: List<Results>?,
+    val results: List<SearchedRecipe>?,
     val offset: Int?,
     val number: Int?,
     val totalResults: Int?,
     ) {
-    data class Results(
+    data class SearchedRecipe(
         val id: Int?,
         val title: String?,
         val image: String?,
