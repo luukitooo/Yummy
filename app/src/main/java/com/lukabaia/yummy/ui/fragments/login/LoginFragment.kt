@@ -15,6 +15,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     private val viewModel: FavouritesViewModel by viewModels()
 
     override fun listeners() {
+
+        binding.tvForgotPassword.setOnClickListener {
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment())
+        }
         binding.tvSignUp.setOnClickListener {
             findNavController().navigate(LoginFragmentDirections.toRegisterFragment())
         }
