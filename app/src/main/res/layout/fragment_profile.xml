@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/grey"
     android:orientation="vertical"
     tools:context=".ui.fragments.profile.ProfileFragment">
 
@@ -19,13 +19,12 @@
         android:padding="5dp"
         android:src="@drawable/ic_arrow_back" />
 
-
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/actor_regular"
         android:text="My Profile"
         android:textColor="@color/black"
@@ -60,11 +59,12 @@
             android:textSize="16sp" />
     </LinearLayout>
 
-
     <FrameLayout
+        android:background="@drawable/custom_button_2"
         android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:layout_margin="30dp"
+        android:layout_height="170dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="30dp"
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="215dp" >
 
@@ -95,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="22sp"
                 android:layout_marginTop="10dp"
-                android:id="@+id/tv_mail"
+                android:id="@+id/tv_email"
                 android:textColor="@color/black"
                 android:text="name" />
 
@@ -104,19 +104,81 @@
     </FrameLayout>
 
     <com.google.android.material.button.MaterialButton
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-        android:layout_width="314dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginBottom="56dp"
+        android:text="Orders"
+        android:layout_marginTop="10dp"
+        app:cornerRadius="20dp"
+        android:gravity="center_vertical"
         android:backgroundTint="@color/white"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:drawableEnd="@drawable/ic_arrow_back"
         android:fontFamily="@font/actor_regular"
-        android:text="Get Started"
-        android:textColor="@color/orange_light"
-        android:textSize="19sp"
+        android:layout_marginHorizontal="30dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Orders"
+        app:cornerRadius="20dp"
+        android:gravity="center_vertical"
+        android:backgroundTint="@color/white"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:drawableEnd="@drawable/ic_arrow_back"
+        android:fontFamily="@font/actor_regular"
+        android:layout_marginHorizontal="30dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Orders"
+        app:cornerRadius="20dp"
+        android:gravity="center_vertical"
+        android:backgroundTint="@color/white"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:drawableEnd="@drawable/ic_arrow_back"
+        android:fontFamily="@font/actor_regular"
+        android:layout_marginHorizontal="30dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Orders"
+        app:cornerRadius="20dp"
+        android:gravity="center_vertical"
+        android:backgroundTint="@color/white"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:drawableEnd="@drawable/ic_arrow_back"
+        android:fontFamily="@font/actor_regular"
+        android:layout_marginHorizontal="30dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginBottom="22dp"
+        android:backgroundTint="@color/orange"
+        android:fontFamily="@font/actor_regular"
+        android:paddingVertical="20dp"
+        android:text="Update"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         app:cornerRadius="30dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

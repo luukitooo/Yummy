@@ -10,7 +10,7 @@
 
     // yummy colors
     <color name="orange">#FA4A0C</color>
-    <color name="grey">#909090</color>
+    <color name="grey">#f5f5f8</color>
     <color name="orange_light">#F47B0A</color>
     <color name="red">#DF2C2C</color>
     <color name="grey_note">#EDEDED</color>
