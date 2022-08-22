@@ -69,11 +69,6 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
         }
     }
 
-//    private fun register() {
-//
-//
-//    }
-
     private fun isValidPassword(): Boolean = with(binding) {
         return@with binding.etPassword.text.toString().length < 8
     }
