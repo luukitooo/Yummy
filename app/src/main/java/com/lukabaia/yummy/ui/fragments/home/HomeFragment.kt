@@ -31,9 +31,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             getData(it.value)
         }
 
-        binding.textView.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToProfileFragment())
-        }
     }
 
     override fun observers() {
