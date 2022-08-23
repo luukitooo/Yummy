@@ -32,9 +32,9 @@ class IngredientsAdapter : ListAdapter<
             binding.apply {
                 tvName.text = ingredient.name
                 tvAmount.text = ingredient.amount.toString().plus(" ${ingredient.unit}")
-                tvConsistency.text = ingredient.consistency
+                tvConsistency.text = ingredient.consistency?.lowercase()
                 tvMeta.text = if (ingredient.meta.isEmpty())
-                    "Not Found"
+                    "not found"
                 else
                     ingredient.meta.toString()
             }

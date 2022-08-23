@@ -1,12 +1,16 @@
 package com.lukabaia.yummy.ui.fragments.home
 
+import android.util.Log
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.lukabaia.yummy.adapter.CategoryAdapter
 import com.lukabaia.yummy.adapter.RecipeAdapter
 import com.lukabaia.yummy.databinding.FragmentHomeBinding
+import com.lukabaia.yummy.model.network.SearchedRecipesInfo
 import com.lukabaia.yummy.ui.fragments.base.BaseFragment
 import com.lukabaia.yummy.utils.RecipeTypes
+import com.lukabaia.yummy.utils.ResponseHandler
 import com.lukabaia.yummy.viewModels.HomeViewModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -41,12 +45,26 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override fun observers() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.recipesFlow.collect {
-                recipeAdapter.submitList(it?.results ?: emptyList())
+                handleResponse(it)
             }
         }
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.categoryFlow.collect {
                 getData(it.value)
+            }
+        }
+    }
+
+    private fun handleResponse(handler: ResponseHandler) {
+        when(handler) {
+            is ResponseHandler.Success<*> -> {
+                recipeAdapter.submitList((handler.result as SearchedRecipesInfo).results)
+            }
+            is ResponseHandler.Loader -> {
+                binding.progressBar.isVisible = handler.isLoading
+            }
+            is ResponseHandler.Error -> {
+                Log.d("errorMessage", handler.errorMessage)
             }
         }
     }
