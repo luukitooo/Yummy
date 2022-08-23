@@ -2,17 +2,23 @@ package com.lukabaia.yummy.ui.fragments.login
 
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
 import com.lukabaia.yummy.R
 import com.lukabaia.yummy.databinding.FragmentLoginBinding
 import com.lukabaia.yummy.ui.fragments.base.BaseFragment
+import com.lukabaia.yummy.utils.ResultOf
 import com.lukabaia.yummy.viewModels.FavouritesViewModel
+import com.lukabaia.yummy.viewModels.LoginViewModel
+import kotlinx.coroutines.launch
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 
-    private val viewModel: FavouritesViewModel by viewModels()
+    private val viewModel: LoginViewModel by viewModels()
 
     override fun listeners() {
 
@@ -24,8 +30,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         }
 
         binding.btnLogin.setOnClickListener {
-            val email = binding.etEmail.text.toString()
-            val password = binding.etPassword.text.toString()
             when {
                 isEmptyField() -> {
                     Toast.makeText(context,
@@ -40,19 +44,11 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                         .show()
                 }
                 else -> {
-                    FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
-                        ?.addOnCompleteListener { task ->
-                            if (task.isSuccessful) {
-                                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
-                            } else {
-                                Toast.makeText(context,
-                                    getString(R.string.login_error),
-                                    Toast.LENGTH_SHORT).show()
-                            }
-                        }
+                   doLogIn()
 
                 }
             }
+            observerLogIn()
         }
     }
 
@@ -70,5 +66,27 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     override fun observers() {
     }
 
+    private fun doLogIn(){
+        val email = binding.etEmail.text.toString()
+        val password = binding.etPassword.text.toString()
+        viewModel.logIn(email, password)
+    }
 
+    private fun observerLogIn(){
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.loginStatus.collect{
+                    when (it) {
+                        is ResultOf.Success -> {
+                            Toast.makeText(context, getString(R.string.logged_success), Toast.LENGTH_SHORT).show()
+                            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
+                        }
+                        is ResultOf.Failure -> {
+                            Toast.makeText(context, getString(R.string.login_error), Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

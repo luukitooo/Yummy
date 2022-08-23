@@ -30,9 +30,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         categoryAdapter.onItemClickListener = {
             getData(it.value)
         }
-        recipeAdapter.onItemClickListener = {
-            findNavController().navigate(HomeFragmentDirections.toDetailedFragment(it.id ?: -1))
-        }
+
     }
 
     override fun observers() {
