@@ -30,14 +30,14 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
     override fun init() {
         // database
         showData()
+        observers()
     }
 
     private fun showData(){
-        val userName = binding.tvEmail
+        val userName = binding.tvUsername
         val email = binding.tvEmail
         viewModel.showRealtimeData(userName, email)
     }
-
 
     override fun observers() {
 

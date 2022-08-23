@@ -49,6 +49,9 @@
         <action
             android:id="@+id/toDetailedFragment"
             app:destination="@id/detailedFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
@@ -77,4 +80,9 @@
             android:id="@+id/toDetailedFragment"
             app:destination="@id/detailedFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.lukabaia.yummy.ui.fragments.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
