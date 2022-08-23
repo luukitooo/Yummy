@@ -21,7 +21,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override fun init() {
 
         buildRecyclers()
-
     }
 
     override fun listeners() {
