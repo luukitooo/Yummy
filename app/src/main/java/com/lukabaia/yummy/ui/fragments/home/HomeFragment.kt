@@ -22,21 +22,28 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
         buildRecyclers()
 
-        getData(RecipeTypes.values()[0].value)
-
     }
 
     override fun listeners() {
         categoryAdapter.onItemClickListener = {
-            getData(it.value)
+            viewLifecycleOwner.lifecycleScope.launch {
+                viewModel.setType(it)
+            }
         }
-
+        recipeAdapter.onItemClickListener = {
+            findNavController().navigate(HomeFragmentDirections.toDetailedFragment(it.id ?: -1))
+        }
     }
 
     override fun observers() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.recipesFlow.collect {
                 recipeAdapter.submitList(it?.results ?: emptyList())
+            }
+        }
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.categoryFlow.collect {
+                getData(it.value)
             }
         }
     }
