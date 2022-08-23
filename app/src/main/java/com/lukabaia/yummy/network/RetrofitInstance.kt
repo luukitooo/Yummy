@@ -1,6 +1,5 @@
 package com.lukabaia.yummy.network
 
-import com.lukabaia.yummy.model.SearchedRecipesInfo
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

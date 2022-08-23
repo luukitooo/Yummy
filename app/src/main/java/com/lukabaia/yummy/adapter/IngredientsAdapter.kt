@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.lukabaia.yummy.databinding.ItemIngredientBinding
-import com.lukabaia.yummy.model.DetailedRecipesInfo
+import com.lukabaia.yummy.model.network.DetailedRecipesInfo
 
 class IngredientsAdapter : ListAdapter<
         DetailedRecipesInfo.ExtendedIngredients,

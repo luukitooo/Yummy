@@ -1,5 +1,7 @@
 package com.lukabaia.yummy.di
 
+import androidx.room.Room
+import com.lukabaia.yummy.data.RecipesDatabase
 import com.lukabaia.yummy.network.DetailedRecipesApi
 import com.lukabaia.yummy.network.RetrofitInstance
 import com.lukabaia.yummy.network.SearchRecipesApi
@@ -17,11 +19,16 @@ val appModule = module {
     }
 
     single<HomeRepository> {
-        HomeRepository(get(), get())
+        HomeRepository(
+            api = get(),
+            application = get()
+        )
     }
 
     viewModel<HomeViewModel> {
-        HomeViewModel(get())
+        HomeViewModel(
+            homeRepository = get()
+        )
     }
 
     single<DetailedRecipesApi> {
@@ -29,11 +36,24 @@ val appModule = module {
     }
 
     single<DetailedRepository> {
-        DetailedRepository(get(), get())
+        DetailedRepository(
+            api = get(),
+            application = get()
+        )
     }
 
     viewModel<DetailedViewModel> {
-        DetailedViewModel(get())
+        DetailedViewModel(
+            detailedRepository = get()
+        )
+    }
+
+    single<RecipesDatabase> {
+        Room.databaseBuilder(
+            get(),
+            RecipesDatabase::class.java,
+            "RecipesDB"
+        ).build()
     }
 
 }

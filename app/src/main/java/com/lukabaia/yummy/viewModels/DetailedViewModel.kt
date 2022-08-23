@@ -1,7 +1,7 @@
 package com.lukabaia.yummy.viewModels
 
 import androidx.lifecycle.ViewModel
-import com.lukabaia.yummy.model.DetailedRecipesInfo
+import com.lukabaia.yummy.model.network.DetailedRecipesInfo
 import com.lukabaia.yummy.repository.DetailedRepository
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow

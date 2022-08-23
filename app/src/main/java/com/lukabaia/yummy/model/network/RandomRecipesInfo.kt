@@ -1,4 +1,4 @@
-package com.lukabaia.yummy.model
+package com.lukabaia.yummy.model.network
 
 data class RandomRecipesInfo(
     val recipes: List<RandomRecipe>?

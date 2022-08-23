@@ -2,7 +2,7 @@ package com.lukabaia.yummy.repository
 
 import android.app.Application
 import com.lukabaia.yummy.R
-import com.lukabaia.yummy.model.DetailedRecipesInfo
+import com.lukabaia.yummy.model.network.DetailedRecipesInfo
 import com.lukabaia.yummy.network.DetailedRecipesApi
 
 class DetailedRepository(

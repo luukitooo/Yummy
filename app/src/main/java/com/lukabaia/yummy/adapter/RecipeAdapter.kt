@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.lukabaia.yummy.databinding.ItemRecipeBinding
-import com.lukabaia.yummy.model.SearchedRecipesInfo
+import com.lukabaia.yummy.model.network.SearchedRecipesInfo
 
 class RecipeAdapter: ListAdapter<
         SearchedRecipesInfo.SearchedRecipe,

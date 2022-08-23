@@ -1,6 +1,6 @@
 package com.lukabaia.yummy.network
 
-import com.lukabaia.yummy.model.RandomRecipesInfo
+import com.lukabaia.yummy.model.network.RandomRecipesInfo
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
