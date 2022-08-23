@@ -10,13 +10,18 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.ktx.storage
 import com.lukabaia.yummy.databinding.FragmentProfileBinding
 import com.lukabaia.yummy.ui.fragments.base.BaseFragment
 import com.lukabaia.yummy.utils.ResultOf
 import com.lukabaia.yummy.viewModels.ProfileViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
@@ -24,12 +29,16 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
 
     private val viewModel: ProfileViewModel by viewModels()
     private var imageUri: Uri? = null
-    private var firebaseStore : FirebaseStorage? = null
-    private var storageReference: StorageReference? = null
+    private var storage : FirebaseStorage? = null
+    private var storageReference = Firebase.storage
     private var auth : FirebaseAuth? = null
     private val PICK_IMAGE_REQUEST = 71
 
+
     override fun listeners() {
+        binding.imgBack.setOnClickListener {
+            findNavController().navigate(ProfileFragmentDirections.toHomeFragment())
+        }
 
         binding.tvChange.setOnClickListener {
 
@@ -46,9 +55,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
 
             uploadImage()
 
-
         }
-
     }
 
     private fun selectImage() {
@@ -74,23 +81,34 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
 
     private fun uploadImage() {
 
-        if(imageUri != null){
-            val reference = storageReference?.child(auth!!.currentUser!!.uid)
-            val uploadTask = reference?.putFile(imageUri!!)
-            Toast.makeText(context, "Successfully uploaded!", Toast.LENGTH_SHORT).show()
-            binding.btnSelectImage.isVisible = false
-            binding.btnUploadImage.isVisible = false
-        } else{
-            Toast.makeText(context, "Please Upload an Image", Toast.LENGTH_SHORT).show()
-
+        imageUri?.let {
+            binding.progressBar.isVisible = true
+            storageReference.getReference("Images").child(System.currentTimeMillis().toString())
+                .putFile(it)
+                .addOnSuccessListener { task->
+                    task.metadata!!.reference!!.downloadUrl
+                        .addOnSuccessListener {
+                            val uid = FirebaseAuth.getInstance().currentUser!!.uid
+                            val imageMap = mapOf("url" to imageUri.toString())
+                            val databaseReference = FirebaseDatabase.getInstance().getReference("userImages")
+                            databaseReference.child(uid).setValue(imageMap)
+                                .addOnSuccessListener {
+                                    Toast.makeText(context, "success", Toast.LENGTH_SHORT).show()
+                                    binding.progressBar.isVisible = false
+                                }
+                                .addOnFailureListener {
+                                    binding.progressBar.isVisible = false
+                                    Toast.makeText(context, it.toString(), Toast.LENGTH_SHORT).show()
+                                }
+                        }
+                }
         }
-
     }
 
     override fun init() {
         auth = FirebaseAuth.getInstance()
-        firebaseStore = FirebaseStorage.getInstance()
-        storageReference = FirebaseStorage.getInstance().reference.child("Profile Img")
+        storage = FirebaseStorage.getInstance()
+        storageReference = FirebaseStorage.getInstance()
         // database
         showData()
         observers()
@@ -110,6 +128,8 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
                     when (it) {
                         is ResultOf.Success -> {
                             d("realtime", "data showed")
+                            delay(5000)
+                            binding.progressBar.isVisible = false
                         }
                         is ResultOf.Failure -> {
                             d("realtime", "data error")
@@ -119,28 +139,4 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
             }
         }
     }
-
-
-//    private val auth = FirebaseAuth.getInstance()
-//    private val database = FirebaseDatabase.getInstance().getReference("userInfo")
-
-//    override fun init() {
-//        // database
-//        if (auth.currentUser?.uid.toString().isNotEmpty()) {
-//            getUserData()
-//        }
-//    }
-//
-//    private fun getUserData() {
-//        database.child(auth.currentUser?.uid.toString())
-//            .addValueEventListener(object : ValueEventListener {
-//                override fun onDataChange(snapshot: DataSnapshot) {
-//                    val userInfo = snapshot.getValue(UserInfo::class.java)!!
-//                    binding.tvUsername.text = userInfo.username
-//                    binding.tvEmail.text = userInfo.email
-//                }
-//                override fun onCancelled(error: DatabaseError) {
-//                }
-//            })
-//    }
 }

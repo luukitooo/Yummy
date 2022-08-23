@@ -126,7 +126,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 android:id="@+id/tv_username"
                 android:textColor="@color/black"
                 android:text="name" />
@@ -134,8 +134,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
-                android:maxLines="3"
+                android:textSize="20sp"
                 android:layout_marginTop="10dp"
                 android:id="@+id/tv_email"
                 android:textColor="@color/black"
@@ -156,7 +155,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:drawableEnd="@drawable/ic_arrow_back"
+        android:drawableEnd="@drawable/ic_arrow_left"
         android:fontFamily="@font/actor_regular"
         android:layout_marginHorizontal="30dp"/>
 
@@ -170,7 +169,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:drawableEnd="@drawable/ic_arrow_back"
+        android:drawableEnd="@drawable/ic_arrow_left"
         android:fontFamily="@font/actor_regular"
         android:layout_marginHorizontal="30dp"/>
 
@@ -184,7 +183,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:drawableEnd="@drawable/ic_arrow_back"
+        android:drawableEnd="@drawable/ic_arrow_left"
         android:fontFamily="@font/actor_regular"
         android:layout_marginHorizontal="30dp"/>
 
@@ -198,7 +197,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:drawableEnd="@drawable/ic_arrow_back"
+        android:drawableEnd="@drawable/ic_arrow_left"
         android:fontFamily="@font/actor_regular"
         android:layout_marginHorizontal="30dp"/>
 

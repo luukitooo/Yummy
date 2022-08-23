@@ -3,8 +3,6 @@ package com.lukabaia.yummy.viewModels
 import android.widget.TextView
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.lukabaia.yummy.model.UserInfo
@@ -13,7 +11,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
-import org.w3c.dom.Text
 
 class ProfileViewModel : ViewModel() {
 
