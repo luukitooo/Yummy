@@ -47,5 +47,9 @@
         android:id="@+id/forgotPasswordFragment"
         android:name="com.lukabaia.yummy.ui.fragments.forgotPassword.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
-        tools:layout="@layout/fragment_forgot_password" />
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>
