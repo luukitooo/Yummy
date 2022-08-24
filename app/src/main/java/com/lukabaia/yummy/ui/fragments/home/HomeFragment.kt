@@ -36,10 +36,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         recipeAdapter.onItemClickListener = {
             findNavController().navigate(HomeFragmentDirections.toDetailedFragment(it.id ?: -1))
         }
-
-        binding.textView.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToProfileFragment())
-        }
     }
 
     override fun observers() {

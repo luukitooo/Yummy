@@ -34,7 +34,11 @@ class DetailedFragment : BaseFragment<FragmentDetailedBinding>(FragmentDetailedB
         }
     }
 
-    override fun listeners() { }
+    override fun listeners() = with(binding) {
+        btnBack.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+    }
 
     override fun observers() {
         viewLifecycleOwner.lifecycleScope.launch {

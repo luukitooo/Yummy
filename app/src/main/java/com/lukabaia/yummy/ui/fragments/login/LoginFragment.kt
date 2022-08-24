@@ -1,5 +1,6 @@
 package com.lukabaia.yummy.ui.fragments.login
 
+import android.content.Intent
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -10,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
 import com.lukabaia.yummy.R
 import com.lukabaia.yummy.databinding.FragmentLoginBinding
+import com.lukabaia.yummy.ui.activities.MainActivity
 import com.lukabaia.yummy.ui.fragments.base.BaseFragment
 import com.lukabaia.yummy.utils.ResultOf
 import com.lukabaia.yummy.viewModels.FavouritesViewModel
@@ -79,7 +81,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                     when (it) {
                         is ResultOf.Success -> {
                             Toast.makeText(context, getString(R.string.logged_success), Toast.LENGTH_SHORT).show()
-                            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
+                            startActivity(Intent(requireActivity(), MainActivity::class.java))
                         }
                         is ResultOf.Failure -> {
                             Toast.makeText(context, getString(R.string.login_error), Toast.LENGTH_SHORT).show()

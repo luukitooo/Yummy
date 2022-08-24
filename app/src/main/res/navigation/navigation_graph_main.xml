@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph_main"
+    app:startDestination="@id/homeNavigation">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.lukabaia.yummy.ui.fragments.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <navigation android:id="@+id/homeNavigation"
+        app:startDestination="@id/homeFragment">
+        <fragment
+            android:id="@+id/homeFragment"
+            android:name="com.lukabaia.yummy.ui.fragments.home.HomeFragment"
+            android:label="fragment_home"
+            tools:layout="@layout/fragment_home">
+            <action
+                android:id="@+id/toDetailedFragment"
+                app:destination="@id/detailedFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/detailedFragment"
+            android:name="com.lukabaia.yummy.ui.fragments.detailed.DetailedFragment"
+            android:label="fragment_detailed"
+            tools:layout="@layout/fragment_detailed" >
+            <argument
+                android:name="id"
+                app:argType="integer" />
+        </fragment>
+    </navigation>
+    <navigation android:id="@+id/favoritesNavigation"
+        app:startDestination="@id/favouritesFragment">
+        <fragment
+            android:id="@+id/favouritesFragment"
+            android:name="com.lukabaia.yummy.ui.fragments.favourites.FavouritesFragment"
+            android:label="fragment_favourites"
+            tools:layout="@layout/fragment_favourites" />
+        <fragment
+            android:id="@+id/detailedFragment2"
+            android:name="com.lukabaia.yummy.ui.fragments.detailed.DetailedFragment"
+            android:label="fragment_detailed"
+            tools:layout="@layout/fragment_detailed" />
+    </navigation>
+</navigation>

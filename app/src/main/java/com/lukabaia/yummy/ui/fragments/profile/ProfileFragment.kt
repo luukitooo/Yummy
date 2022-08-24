@@ -36,10 +36,6 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
 
 
     override fun listeners() {
-        binding.imgBack.setOnClickListener {
-            findNavController().navigate(ProfileFragmentDirections.toHomeFragment())
-        }
-
         binding.tvChange.setOnClickListener {
 
             binding.btnSelectImage.isVisible = true
