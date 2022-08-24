@@ -1,6 +1,6 @@
 <resources>
     <!--API key-->
-    <string name="api_key">95fcb7dbb5164662baf5688056df6cac</string>
+    <string name="api_key">57a1de40704f4d8b8e0e98da3fd8d5f8</string>
 
     <string name="app_name">Yummy</string>
     <string name="register_success">\"You have registered successfully! \"</string>
