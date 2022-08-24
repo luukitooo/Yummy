@@ -17,4 +17,5 @@
     <string name="send">Send</string>
     <string name="recovery_success">A recovery message has been sent to your email, please check it</string>
     <string name="recovery_error">Failed to send recovery message, please enter a valid email</string>
+    <string name="randomizer">Randomizer</string>
 </resources>
