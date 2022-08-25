@@ -1,18 +1,22 @@
 package com.lukabaia.yummy.di
 
 import androidx.room.Room
+import com.lukabaia.yummy.adapter.FavoritesAdapter
 import com.lukabaia.yummy.data.RecipesDatabase
 import com.lukabaia.yummy.network.DetailedRecipesApi
 import com.lukabaia.yummy.network.RandomRecipesApi
 import com.lukabaia.yummy.network.RetrofitInstance
 import com.lukabaia.yummy.network.SearchRecipesApi
 import com.lukabaia.yummy.repository.DetailedRepository
+import com.lukabaia.yummy.repository.FavoritesRepository
 import com.lukabaia.yummy.repository.HomeRepository
 import com.lukabaia.yummy.repository.RandomRepository
 import com.lukabaia.yummy.viewModels.DetailedViewModel
+import com.lukabaia.yummy.viewModels.FavouritesViewModel
 import com.lukabaia.yummy.viewModels.HomeViewModel
 import com.lukabaia.yummy.viewModels.RandomViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.core.scope.get
 import org.koin.dsl.module
 
 val appModule = module {
@@ -41,6 +45,7 @@ val appModule = module {
     single<DetailedRepository> {
         DetailedRepository(
             api = get(),
+            database = get(),
             application = get()
         )
     }
@@ -74,6 +79,14 @@ val appModule = module {
             RecipesDatabase::class.java,
             "RecipesDB"
         ).build()
+    }
+
+    single<FavoritesRepository> {
+        FavoritesRepository(get())
+    }
+
+    viewModel<FavouritesViewModel> {
+        FavouritesViewModel(get())
     }
 
 }

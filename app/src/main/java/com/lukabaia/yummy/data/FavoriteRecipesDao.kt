@@ -18,4 +18,7 @@ interface FavoriteRecipesDao {
     @Query("SELECT * FROM favorite_recipes ORDER BY id DESC")
     suspend fun getAllRecipes(): List<FavoriteRecipe>
 
+    @Query("SELECT * FROM favorite_recipes WHERE title = :title")
+    suspend fun getRecipe(title: String): FavoriteRecipe
+
 }

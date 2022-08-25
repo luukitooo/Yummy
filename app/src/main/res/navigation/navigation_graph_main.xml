@@ -49,11 +49,19 @@
             android:id="@+id/favouritesFragment"
             android:name="com.lukabaia.yummy.ui.fragments.favourites.FavouritesFragment"
             android:label="fragment_favourites"
-            tools:layout="@layout/fragment_favourites" />
+            tools:layout="@layout/fragment_favourites" >
+            <action
+                android:id="@+id/action_favouritesFragment_to_detailedFragment2"
+                app:destination="@id/detailedFragment2" />
+        </fragment>
         <fragment
             android:id="@+id/detailedFragment2"
             android:name="com.lukabaia.yummy.ui.fragments.detailed.DetailedFragment"
             android:label="fragment_detailed"
-            tools:layout="@layout/fragment_detailed" />
+            tools:layout="@layout/fragment_detailed" >
+            <argument
+                android:name="id"
+                app:argType="integer" />
+        </fragment>
     </navigation>
 </navigation>
