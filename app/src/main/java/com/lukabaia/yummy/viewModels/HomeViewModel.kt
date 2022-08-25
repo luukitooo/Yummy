@@ -37,5 +37,4 @@ class HomeViewModel(
     suspend fun setType(type: RecipeTypes) {
         _categoryFlow.emit(type)
     }
-
 }

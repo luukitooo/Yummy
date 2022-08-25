@@ -39,7 +39,6 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
         binding.tvChange.setOnClickListener {
 
             binding.btnSelectImage.isVisible = true
-            binding.btnUploadImage.isVisible = true
         }
 
         binding.btnSelectImage.setOnClickListener {
@@ -47,7 +46,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
             selectImage()
 
         }
-        binding.btnUploadImage.setOnClickListener {
+        binding.btnUpdate.setOnClickListener {
 
             uploadImage()
 
