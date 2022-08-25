@@ -37,9 +37,9 @@ class RandomFragment : BaseFragment<FragmentRandomBinding>(FragmentRandomBinding
 
         }
 
-//        randomAdapter.recipeClick = {
-//            findNavController().navigate(RandomFragmentDirections.actionRandomFragmentToDetailedFragment((it.id ?: -1).toInt()))
-//        }
+        randomAdapter.recipeClick = {
+            findNavController().navigate(RandomFragmentDirections.actionRandomFragmentToDetailedFragment((it.id ?: -1).toInt()))
+        }
 
     }
 

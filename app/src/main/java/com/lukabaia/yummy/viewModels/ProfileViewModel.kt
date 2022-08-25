@@ -34,13 +34,13 @@ class ProfileViewModel : ViewModel() {
             if (auth.currentUser?.uid.toString().isNotEmpty()) {
                 databaseReference.child(auth.currentUser?.uid.toString())
                     .addValueEventListener(object : ValueEventListener {
+
                         override fun onDataChange(snapshot: DataSnapshot) {
                             val userInfo = snapshot.getValue(UserInfo::class.java)!!
                             username.text = userInfo.username
                             email.text = userInfo.email
                             flow { emit(ResultOf.Success<String>()) }
                         }
-
                         override fun onCancelled(error: DatabaseError) {
                         }
                     })

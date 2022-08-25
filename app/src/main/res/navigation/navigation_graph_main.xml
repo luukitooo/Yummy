@@ -20,6 +20,9 @@
             <action
                 android:id="@+id/toDetailedFragment"
                 app:destination="@id/detailedFragment" />
+            <action
+                android:id="@+id/action_homeFragment_to_randomFragment"
+                app:destination="@id/randomFragment" />
         </fragment>
         <fragment
             android:id="@+id/detailedFragment"
@@ -29,6 +32,15 @@
             <argument
                 android:name="id"
                 app:argType="integer" />
+        </fragment>
+        <fragment
+            android:id="@+id/randomFragment"
+            android:name="com.lukabaia.yummy.ui.fragments.randomizer.RandomFragment"
+            android:label="fragment_random"
+            tools:layout="@layout/fragment_random" >
+            <action
+                android:id="@+id/action_randomFragment_to_detailedFragment"
+                app:destination="@id/detailedFragment" />
         </fragment>
     </navigation>
     <navigation android:id="@+id/favoritesNavigation"

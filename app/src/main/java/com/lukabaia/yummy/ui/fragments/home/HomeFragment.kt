@@ -36,6 +36,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         recipeAdapter.onItemClickListener = {
             findNavController().navigate(HomeFragmentDirections.toDetailedFragment(it.id ?: -1))
         }
+
+        binding.btnRandomizer.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToRandomFragment())
+        }
     }
 
     override fun observers() {

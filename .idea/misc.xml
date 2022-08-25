@@ -5,6 +5,9 @@
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/Yummy/app/src/main/res/drawable-v24/custom_btn_3.xml" value="0.266" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Yummy/app/src/main/res/drawable/ic_arrow_back.xml" value="0.312" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Yummy/app/src/main/res/drawable/ic_iconmonstr_media_control_55.xml" value="0.263" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Yummy/app/src/main/res/drawable/ic_iconmonstr_random_thin.xml" value="0.263" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Yummy/app/src/main/res/layout/activity_auth.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Yummy/app/src/main/res/layout/activity_main.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Yummy/app/src/main/res/layout/fragment_favourites.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Yummy/app/src/main/res/layout/fragment_forgot_password.xml" value="0.18819444444444444" />
@@ -21,6 +24,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/Yummy/app/src/main/res/layout/item_random.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Yummy/app/src/main/res/layout/item_recipe.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Yummy/app/src/main/res/layout/random_item.xml" value="0.23716216216216215" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Yummy/app/src/main/res/menu/home_bottom_navigation_menu.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/drawable/ic_arrow_1.xml" value="0.1235" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/drawable/ic_arrow_right.xml" value="0.1235" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/drawable/ic_bi_credit_card_2_front_fill.xml" value="0.1235" />
