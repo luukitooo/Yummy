@@ -8,12 +8,14 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lukabaia.yummy.adapter.RandomAdapter
 import com.lukabaia.yummy.databinding.FragmentRandomBinding
 import com.lukabaia.yummy.model.network.RandomRecipesInfo
 import com.lukabaia.yummy.model.network.SearchedRecipesInfo
 import com.lukabaia.yummy.ui.fragments.base.BaseFragment
+import com.lukabaia.yummy.ui.fragments.home.HomeFragmentDirections
 import com.lukabaia.yummy.utils.ResponseHandler
 import com.lukabaia.yummy.viewModels.HomeViewModel
 import com.lukabaia.yummy.viewModels.RandomViewModel
@@ -34,6 +36,11 @@ class RandomFragment : BaseFragment<FragmentRandomBinding>(FragmentRandomBinding
             getData()
 
         }
+
+//        randomAdapter.recipeClick = {
+//            findNavController().navigate(RandomFragmentDirections.actionRandomFragmentToDetailedFragment((it.id ?: -1).toInt()))
+//        }
+
     }
 
     override fun init() {
