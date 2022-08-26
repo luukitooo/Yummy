@@ -1,6 +1,7 @@
 package com.lukabaia.yummy.ui.fragments.home
 
 import android.util.Log
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -39,6 +40,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
         binding.btnRandomizer.setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToRandomFragment())
+        }
+        binding.etSearch.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.toSearchFragment())
         }
     }
 
