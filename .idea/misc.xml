@@ -60,9 +60,12 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/drawable/ic_vector__9_.xml" value="0.1235" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/drawable/ic_whh_securityalt.xml" value="0.1235" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/drawable/shape_bottom_radius.xml" value="0.1235" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/drawable/shape_message_assistant.xml" value="0.13" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/drawable/shape_message_user.xml" value="0.13" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/drawable/shape_search.xml" value="0.1235" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/drawable/shape_top_radius.xml" value="0.1235" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/layout/activity_main.xml" value="0.18611111111111112" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/layout/fragment_assistant.xml" value="0.20213675213675214" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/layout/fragment_detailed.xml" value="0.18611111111111112" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/layout/fragment_favourites.xml" value="0.20213675213675214" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/layout/fragment_forgot_password.xml" value="0.20213675213675214" />
@@ -76,6 +79,8 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/layout/item_category.xml" value="0.18611111111111112" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/layout/item_favorite.xml" value="0.20213675213675214" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/layout/item_ingredient.xml" value="0.176" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/layout/item_message_assistant.xml" value="0.2012820512820513" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/layout/item_message_user.xml" value="0.2012820512820513" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/layout/item_recipe.xml" value="0.18611111111111112" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Yummy/app/src/main/res/menu/home_bottom_navigation_menu.xml" value="0.20213675213675214" />
       </map>
