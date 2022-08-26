@@ -10,7 +10,7 @@ interface SearchRecipesApi {
 
     @GET("recipes/complexSearch")
     @Headers("Content-Type: application/json")
-    suspend fun getDetailedRecipes(
+    suspend fun getRecipes(
         @Query("apiKey") apiKey: String,
         @Query("query") query: String? = null,
         @Query("diet") diet: String? = null,
