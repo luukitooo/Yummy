@@ -8,193 +8,123 @@
     android:orientation="vertical"
     tools:context=".ui.fragments.profile.ProfileFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_back"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/oval"
-            android:backgroundTint="@color/white"
-            android:padding="5dp"
-            android:src="@drawable/ic_arrow_back" />
-
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            android:layout_gravity="bottom"
-            android:layout_marginStart="180dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="30dp"
         android:fontFamily="@font/actor_regular"
         android:text="My Profile"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="40dp"
         android:textColor="@color/black"
         android:textSize="34sp" />
 
-
-
-    <LinearLayout
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_personal_details"
         android:layout_width="match_parent"
+        android:gravity="center"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/actor_regular"
+        android:text="Personal details"
+        android:textColor="@color/black"
+        android:textSize="22sp" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_personal_details"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/actor_regular"
-            android:text="Personal details"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="25dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_change"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/actor_regular"
-            android:text="Change"
-            android:gravity="center"
-            android:textColor="@color/orange"
-            android:textSize="16sp" />
-    </LinearLayout>
-
-    <FrameLayout
-        android:background="@drawable/custom_button_2"
-        android:layout_width="350dp"
-        android:layout_height="140dp"
-        android:layout_marginVertical="10dp"
-        android:layout_marginHorizontal="30dp"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="215dp" >
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_profile_image"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@mipmap/ratatui"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_select_image"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_gravity="bottom"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="5dp"
-            android:text="Select image"
-            android:visibility="invisible"
-            app:cornerRadius="20dp" />
-
-        <LinearLayout
-            android:layout_marginStart="130dp"
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="20dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingHorizontal="50dp"
+            android:paddingVertical="40dp">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:textSize="20sp"
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/img_profile_image"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center"
+                android:elevation="4dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
                 android:id="@+id/tv_username"
-                android:textColor="@color/black"
-                android:text="name" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:layout_marginTop="10dp"
-                android:id="@+id/tv_email"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/actor_regular"
+                android:gravity="center"
+                android:text="Username"
                 android:textColor="@color/black"
-                android:text="name" />
+                android:textSize="18sp" />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/actor_regular"
+                android:gravity="center"
+                android:text="Email"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
-    </FrameLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="About us"
-        android:layout_marginTop="10dp"
-        app:cornerRadius="20dp"
-        android:gravity="center_vertical"
-        android:backgroundTint="@color/white"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:drawableEnd="@drawable/ic_arrow_left"
-        android:fontFamily="@font/actor_regular"
-        android:layout_marginHorizontal="30dp"/>
+    </androidx.cardview.widget.CardView>
 
     <com.google.android.material.button.MaterialButton
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="FAQ"
-        app:cornerRadius="20dp"
-        android:gravity="center_vertical"
-        android:backgroundTint="@color/white"
+        android:id="@+id/btn_select_image"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:drawableEnd="@drawable/ic_arrow_left"
-        android:fontFamily="@font/actor_regular"
-        android:layout_marginHorizontal="30dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="100dp"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:text="Select image"
+        app:cornerRadius="20dp" />
 
     <com.google.android.material.button.MaterialButton
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Rame"
-        app:cornerRadius="20dp"
-        android:gravity="center_vertical"
-        android:backgroundTint="@color/white"
+        android:id="@+id/tbn_update"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:drawableEnd="@drawable/ic_arrow_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginBottom="22dp"
+        android:backgroundTint="@color/orange"
         android:fontFamily="@font/actor_regular"
-        android:layout_marginHorizontal="30dp"/>
+        android:paddingVertical="10dp"
+        android:text="Update"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:cornerRadius="30dp"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/btn_update"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="bottom"-->
-<!--        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"-->
-<!--        android:layout_marginHorizontal="50dp"-->
-<!--        android:layout_marginBottom="22dp"-->
-<!--        android:backgroundTint="@color/orange"-->
-<!--        android:fontFamily="@font/actor_regular"-->
-<!--        android:paddingVertical="20dp"-->
-<!--        android:text="Update"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="20sp"-->
-<!--        app:cornerRadius="30dp"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="50dp"
+        android:src="@drawable/ic_iconmonstr_media_control_55"
+        app:tint="@color/white" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

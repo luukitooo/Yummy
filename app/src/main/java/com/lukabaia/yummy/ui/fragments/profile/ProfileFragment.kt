@@ -125,7 +125,6 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
                     when (it) {
                         is ResultOf.Success -> {
                             d("realtime", "data showed")
-                            binding.progressBar.isVisible = false
                         }
                         is ResultOf.Failure -> {
                             d("realtime", "data error")
