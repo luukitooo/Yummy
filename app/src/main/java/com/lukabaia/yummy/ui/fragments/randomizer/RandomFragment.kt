@@ -63,6 +63,7 @@ class RandomFragment : BaseFragment<FragmentRandomBinding>(FragmentRandomBinding
                     when(it) {
                         is ResponseHandler.Success<*> -> {
                             randomAdapter.submitList(it.result as MutableList<RandomRecipesInfo.RandomRecipe>?)
+//                            var item = (it.result as MutableList<RandomRecipesInfo.RandomRecipe>)[0]
                         }
                         is ResponseHandler.Error -> {
                             Toast.makeText(context, "error", Toast.LENGTH_SHORT).show()
