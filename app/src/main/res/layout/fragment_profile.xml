@@ -1,62 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
-    android:orientation="vertical"
+    android:background="@color/grey_note"
     tools:context=".ui.fragments.profile.ProfileFragment">
-
-
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_profile"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="50dp"
         android:fontFamily="@font/actor_regular"
         android:text="My Profile"
-        android:layout_marginTop="40dp"
-        android:layout_marginHorizontal="40dp"
         android:textColor="@color/black"
-        android:textSize="34sp" />
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_personal_details"
+        android:id="@+id/personal_details"
         android:layout_width="match_parent"
-        android:gravity="center"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/actor_regular"
+        android:layout_marginVertical="30dp"
+        android:gravity="center"
         android:text="Personal details"
-        android:textColor="@color/black"
-        android:textSize="22sp" />
+        android:textColor="@color/orange"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_profile"
+        app:layout_constraintStart_toStartOf="@+id/tv_profile"
+        app:layout_constraintTop_toBottomOf="@+id/tv_profile" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cr_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginVertical="10dp"
         app:cardCornerRadius="30dp"
-        app:cardElevation="25dp">
+        app:cardElevation="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/personal_details"
+        app:layout_constraintTop_toBottomOf="@+id/personal_details">
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="50dp"
-            android:paddingVertical="40dp">
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="20dp">
 
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/img_profile_image"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center"
                 android:elevation="4dp"
                 android:src="@mipmap/ic_launcher" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_username"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
@@ -65,13 +70,13 @@
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/actor_regular"
                 android:gravity="center"
-                android:text="Username"
+                android:text="User"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_email"
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/actor_regular"
@@ -88,43 +93,50 @@
         android:id="@+id/btn_select_image"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom"
-        android:layout_marginHorizontal="100dp"
-        android:gravity="center"
-        android:textSize="16sp"
-        android:text="Select image"
-        app:cornerRadius="20dp" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/tbn_update"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="54dp"
         android:layout_gravity="bottom"
         android:layout_marginHorizontal="50dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="center"
+        android:text="Select image"
+        android:textSize="16sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_update"
+        app:layout_constraintEnd_toEndOf="@+id/cr_profile"
+        app:layout_constraintStart_toStartOf="@+id/cr_profile"
+        app:layout_constraintTop_toBottomOf="@+id/cr_profile" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_update"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginVertical="10dp"
         android:backgroundTint="@color/orange"
         android:fontFamily="@font/actor_regular"
         android:paddingVertical="10dp"
         android:text="Update"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:cornerRadius="30dp"
-        android:layout_marginVertical="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_logout"
+        app:layout_constraintEnd_toEndOf="@+id/btn_select_image"
+        app:layout_constraintStart_toStartOf="@+id/btn_select_image" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_logout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:layout_marginVertical="10dp"
+        android:layout_marginVertical="20dp"
         android:layout_marginHorizontal="50dp"
-        android:src="@drawable/ic_iconmonstr_media_control_55"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/white" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

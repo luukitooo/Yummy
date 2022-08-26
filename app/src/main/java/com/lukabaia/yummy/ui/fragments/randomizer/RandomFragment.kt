@@ -24,51 +24,32 @@ class RandomFragment : BaseFragment<FragmentRandomBinding>(FragmentRandomBinding
 
     private  val viewModel by viewModel<RandomViewModel>()
 
-//    private var randomAdapter: RandomAdapter = RandomAdapter()
-
     override fun listeners() {
 
         binding.btnGenerate.setOnClickListener {
-
             observer()
             getData()
-
         }
 
-//        binding.itemCardView.setOnClickListener {
-//            findNavController().navigate(RandomFragmentDirections.actionRandomFragmentToDetailedFragment((it.id ?: -1).toInt()))
-//        }
-
-//        randomAdapter.recipeClick = {
-//            findNavController().navigate(RandomFragmentDirections.actionRandomFragmentToDetailedFragment((it.id ?: -1).toInt()))
-//        }
-
+        binding.imgBack.setOnClickListener {
+            findNavController().navigate(RandomFragmentDirections.actionRandomFragmentToHomeFragment())
+        }
     }
 
     override fun init() {
-//        binding.rvRecipes.apply {
-//            layoutManager = LinearLayoutManager(context)
-//            adapter = randomAdapter
-//        }
-    }
-
-    override fun observers() {
 
     }
 
      private fun observer() {
-
         viewLifecycleOwner.lifecycleScope.launch{
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 getData()
                 viewModel.recipeFlow.collect{
                     when(it) {
                         is ResponseHandler.Success<*> -> {
-//                            randomAdapter.submitList(it.result as MutableList<RandomRecipesInfo.RandomRecipe>?)
                             val itemImage = (it.result as MutableList<RandomRecipesInfo.RandomRecipe>)[0].image
                             val itemTitle = (it.result as MutableList<RandomRecipesInfo.RandomRecipe>)[0].title
                             val itemId = (it.result as MutableList<RandomRecipesInfo.RandomRecipe>)[0].id
-
                             binding.tvRecipeTitle.text = itemTitle.toString()
                             Glide.with(binding.ivRecipe).load(itemImage).into(binding.ivRecipe)
                             binding.itemCardView.setOnClickListener {
@@ -95,5 +76,7 @@ class RandomFragment : BaseFragment<FragmentRandomBinding>(FragmentRandomBinding
                 )
             }
         }
+    }
+    override fun observers() {
     }
 }

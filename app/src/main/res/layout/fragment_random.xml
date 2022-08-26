@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey_note"
-    android:orientation="vertical"
     tools:context=".ui.fragments.randomizer.RandomFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -72,8 +72,8 @@
         app:layout_constraintTop_toBottomOf="@+id/cv_question">
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="184dp"
+            android:layout_height="245dp"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -94,6 +94,7 @@
                     android:id="@+id/progress_bar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_gravity="center" />
             </FrameLayout>
 
@@ -102,11 +103,10 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginVertical="10dp"
                 android:fontFamily="@font/actor_regular"
                 android:gravity="center"
-                android:text="Recipe Title"
+                android:text="Random Recipe"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
