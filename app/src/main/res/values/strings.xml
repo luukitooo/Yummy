@@ -1,9 +1,10 @@
 <resources>
     <!--API key-->
-    <string name="api_key">57a1de40704f4d8b8e0e98da3fd8d5f8</string>
+    <string name="api_key">f4ffdc007bd546889752ec4ef00030d4</string>
 
     <!--95fcb7dbb5164662baf5688056df6cac-->
     <!--57a1de40704f4d8b8e0e98da3fd8d5f8-->
+    <!--f4ffdc007bd546889752ec4ef00030d4-->
 
     <string name="app_name">Yummy</string>
     <string name="register_success">\"You have registered successfully! \"</string>
@@ -21,4 +22,6 @@
     <string name="recovery_success">A recovery message has been sent to your email, please check it</string>
     <string name="recovery_error">Failed to send recovery message, please enter a valid email</string>
     <string name="randomizer">Randomizer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

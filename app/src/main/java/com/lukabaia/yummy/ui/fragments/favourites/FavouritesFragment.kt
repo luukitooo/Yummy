@@ -34,6 +34,9 @@ class FavouritesFragment :
                 )
             )
         }
+        binding.btnAssistant.setOnClickListener {
+            findNavController().navigate(FavouritesFragmentDirections.toAssistantFragment())
+        }
     }
 
     override fun init() {
