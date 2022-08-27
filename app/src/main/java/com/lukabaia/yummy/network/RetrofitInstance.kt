@@ -18,10 +18,15 @@ object RetrofitInstance {
     fun getRandomRecipesApi(): RandomRecipesApi = instance.create(RandomRecipesApi::class.java)
 
     @Synchronized
-    fun getDetailedRecipesApi() : DetailedRecipesApi = instance.create(DetailedRecipesApi::class.java)
+    fun getDetailedRecipesApi(): DetailedRecipesApi = instance.create(DetailedRecipesApi::class.java)
 
     @Synchronized
-    fun getSearchedRecipesApi() : SearchRecipesApi = instance.create(SearchRecipesApi::class.java)
+    fun getSearchedRecipesApi(): SearchRecipesApi = instance.create(SearchRecipesApi::class.java)
 
+    @Synchronized
+    fun getSuggestsApi(): SuggestsApi = instance.create(SuggestsApi::class.java)
+
+    @Synchronized
+    fun getAssistantAnswersApi(): AssistantAnswerApi = instance.create(AssistantAnswerApi::class.java)
 
 }

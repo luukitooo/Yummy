@@ -63,11 +63,11 @@ class MessagesAdapter : ListAdapter<Message, RecyclerView.ViewHolder>(MessageIte
 
     private object MessageItemCallback : DiffUtil.ItemCallback<Message>() {
         override fun areItemsTheSame(oldItem: Message, newItem: Message): Boolean {
-            return false
+            return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(oldItem: Message, newItem: Message): Boolean {
-            return false
+            return oldItem == newItem
         }
     }
 

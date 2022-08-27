@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_marginVertical="8dp"
+    android:layout_marginStart="80dp"
+    android:layout_marginEnd="8dp"
     android:gravity="end"
     android:orientation="vertical"
     app:cardCornerRadius="24dp">
