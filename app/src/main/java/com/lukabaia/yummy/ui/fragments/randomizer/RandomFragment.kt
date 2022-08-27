@@ -1,8 +1,10 @@
 package com.lukabaia.yummy.ui.fragments.randomizer
 
 
+import android.text.Html
 import android.util.Log
 import android.widget.Toast
+import androidx.core.view.forEach
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -47,14 +49,22 @@ class RandomFragment : BaseFragment<FragmentRandomBinding>(FragmentRandomBinding
                 viewModel.recipeFlow.collect{
                     when(it) {
                         is ResponseHandler.Success<*> -> {
-                            val itemImage = (it.result as MutableList<RandomRecipesInfo.RandomRecipe>)[0].image
-                            val itemTitle = (it.result as MutableList<RandomRecipesInfo.RandomRecipe>)[0].title
-                            val itemId = (it.result as MutableList<RandomRecipesInfo.RandomRecipe>)[0].id
-                            binding.tvRecipeTitle.text = itemTitle.toString()
-                            Glide.with(binding.ivRecipe).load(itemImage).into(binding.ivRecipe)
-                            binding.itemCardView.setOnClickListener {
-                                findNavController().navigate(RandomFragmentDirections.actionRandomFragmentToDetailedFragment((itemId ?: -1).toInt()))
+                            val result = (it.result as MutableList<RandomRecipesInfo.RandomRecipe>)[0]
+                            binding.apply {
+                                tvRecipeTitle.text = result.title.toString()
+                                tvSummary.text = Html.fromHtml(result.summary, 2)
+                                    .substring(0, 100).plus("...")
+                                tvReadyInMinutes.text = result.readyInMinutes.toString()
+                                tvVegan.text = result.vegan.toString()
+                                tvCheap.text = result.cheap.toString()
+                                tvScore.text = result.healthScore.toString()
+                                tvPopular.text = result.veryPopular.toString()
+                                Glide.with(ivRecipe).load(result.image).into(binding.ivRecipe)
+                                itemCardView.setOnClickListener {
+                                    findNavController().navigate(RandomFragmentDirections.actionRandomFragmentToDetailedFragment((result.id ?: -1).toInt()))
+                                }
                             }
+                            showViews()
                         }
                         is ResponseHandler.Error -> {
                             Toast.makeText(context, "error", Toast.LENGTH_SHORT).show()
@@ -65,6 +75,13 @@ class RandomFragment : BaseFragment<FragmentRandomBinding>(FragmentRandomBinding
                     }
                 }
             }
+        }
+    }
+
+    private fun showViews() {
+        binding.itemCardView.isVisible = true
+        binding.clRecipe.forEach {
+            it.isVisible = true
         }
     }
 
