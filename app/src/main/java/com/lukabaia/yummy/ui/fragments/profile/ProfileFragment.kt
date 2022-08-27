@@ -81,7 +81,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
                             val uid = FirebaseAuth.getInstance().currentUser!!.uid
                             val imageMap = mapOf("url" to imageUri.toString())
                             val databaseReference =
-                                FirebaseDatabase.getInstance().getReference("Images")
+                                FirebaseDatabase.getInstance().getReference("userImages")
                             databaseReference.child(uid).setValue(imageMap)
                                 .addOnSuccessListener {
                                     Toast.makeText(context, "success", Toast.LENGTH_SHORT).show()
@@ -102,13 +102,12 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
 
         // database // storage
         showData()
-        observers()
     }
 
     private fun showData() {
         val userName = binding.tvUsername
         val email = binding.tvEmail
-        viewModel.showRealtimeData(userName, email)
+        viewModel.showRealtimeData(userName, email, binding.imgProfileImage)
     }
 
     override fun observers() {
