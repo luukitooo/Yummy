@@ -5,5 +5,5 @@ import androidx.core.net.toUri
 import java.net.URL
 
 data class Image(
-    val imageUri: Uri? = "".toUri()
+    val url: String? = ""
 )

@@ -1,7 +1,9 @@
 package com.lukabaia.yummy.viewModels
 
+import android.util.Log.d
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.net.toUri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseAuth
@@ -53,16 +55,17 @@ class ProfileViewModel : ViewModel() {
                         override fun onCancelled(error: DatabaseError) {
                         }
                     })
-//                databaseReferenceImage.child(auth.currentUser?.uid.toString())
-//                    .addValueEventListener(object : ValueEventListener {
-//                        override fun onDataChange(snapshot: DataSnapshot) {
-//                            val image = snapshot.getValue(Image::class.java)!!
-//                            imageView.setImageURI(image.imageUri)
-//                            flow { emit(ResultOf.Success<String>()) }
-//                        }
-//                        override fun onCancelled(error: DatabaseError) {
-//                        }
-//                    })
+                databaseReferenceImage.child(auth.currentUser?.uid.toString())
+                    .addValueEventListener(object : ValueEventListener {
+                        override fun onDataChange(snapshot: DataSnapshot) {
+                            val image = snapshot.getValue(Image::class.java)!!
+                            imageView.setImageURI(image.url?.toUri())
+                            d("log", "update2 - ${image.url} }")
+                            flow { emit(ResultOf.Success<String>()) }
+                        }
+                        override fun onCancelled(error: DatabaseError) {
+                        }
+                    })
             }
         } catch (e: Throwable) {
             emit(ResultOf.Failure(message = e.message ?: "error"))
