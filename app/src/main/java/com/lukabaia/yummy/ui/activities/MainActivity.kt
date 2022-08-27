@@ -1,6 +1,8 @@
 package com.lukabaia.yummy.ui.activities
 
 import android.app.Activity
+import android.content.res.XmlResourceParser
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.Navigation.findNavController
@@ -19,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        window.setBackgroundDrawableResource(R.drawable.default_background)
 
         init()
     }

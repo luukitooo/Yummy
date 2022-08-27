@@ -53,16 +53,16 @@ class ProfileViewModel : ViewModel() {
                         override fun onCancelled(error: DatabaseError) {
                         }
                     })
-                databaseReferenceImage.child(auth.currentUser?.uid.toString())
-                    .addValueEventListener(object : ValueEventListener {
-                        override fun onDataChange(snapshot: DataSnapshot) {
-                            val image = snapshot.getValue(Image::class.java)!!
-                            imageView.setImageURI(image.imageUri)
-                            flow { emit(ResultOf.Success<String>()) }
-                        }
-                        override fun onCancelled(error: DatabaseError) {
-                        }
-                    })
+//                databaseReferenceImage.child(auth.currentUser?.uid.toString())
+//                    .addValueEventListener(object : ValueEventListener {
+//                        override fun onDataChange(snapshot: DataSnapshot) {
+//                            val image = snapshot.getValue(Image::class.java)!!
+//                            imageView.setImageURI(image.imageUri)
+//                            flow { emit(ResultOf.Success<String>()) }
+//                        }
+//                        override fun onCancelled(error: DatabaseError) {
+//                        }
+//                    })
             }
         } catch (e: Throwable) {
             emit(ResultOf.Failure(message = e.message ?: "error"))
