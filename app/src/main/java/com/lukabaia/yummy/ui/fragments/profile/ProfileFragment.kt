@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.util.Log.d
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -16,6 +17,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
 import com.lukabaia.yummy.databinding.FragmentProfileBinding
+import com.lukabaia.yummy.ui.activities.AuthActivity
 import com.lukabaia.yummy.ui.activities.MainActivity
 import com.lukabaia.yummy.ui.fragments.base.BaseFragment
 import com.lukabaia.yummy.utils.ResultOf
@@ -36,8 +38,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
     override fun listeners() {
         binding.btnLogout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
-//            findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToLoginFragment())
-
+            startActivity(Intent(this@ProfileFragment.requireContext(), AuthActivity::class.java))
         }
 
         binding.btnSelectImage.setOnClickListener {
