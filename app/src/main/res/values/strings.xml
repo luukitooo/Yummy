@@ -67,4 +67,6 @@
     <string name="first_char_number_error">Username\'s first character cannot be a number</string>
     <string name="repeat_password">Repeat password</string>
     <string name="change_image">Change Image</string>
+    <string name="something">something</string>
+    <string name="sent">sent</string>
 </resources>

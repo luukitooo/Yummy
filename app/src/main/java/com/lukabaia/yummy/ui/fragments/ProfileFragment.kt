@@ -1,6 +1,5 @@
 package com.lukabaia.yummy.ui.fragments
 
-import android.app.Activity
 import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.graphics.Bitmap
@@ -10,7 +9,6 @@ import android.util.Log.d
 import android.widget.Toast
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.view.isVisible
-import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
@@ -118,7 +116,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
 
 
     override fun init() {
-        // database
+        // database //storage
         showData()
         try {
             downloadImage()
