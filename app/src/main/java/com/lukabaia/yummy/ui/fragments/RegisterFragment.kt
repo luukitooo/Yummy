@@ -72,14 +72,11 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
     }
     private fun isNotValidUsername() : Boolean = with(binding){
         return@with binding.etUsername.text.toString()[0].isDigit()
-
     }
 
     private fun passwordsMatch(): Boolean = with(binding) {
         return@with binding.etPassword.text.toString() == binding.etRepeatPassword.text.toString()
     }
-
-
 
     private fun doRegistration() {
         val userName = binding.etUsername.text.toString()
@@ -108,6 +105,4 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
     }
     override fun init() {
     }
-
-
 }
