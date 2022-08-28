@@ -1,4 +1,4 @@
-package com.lukabaia.yummy.ui.fragments.randomizer
+package com.lukabaia.yummy.ui.fragments
 
 
 import android.text.Html

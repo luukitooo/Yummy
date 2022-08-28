@@ -9,7 +9,7 @@
         app:startDestination="@id/homeFragment">
         <fragment
             android:id="@+id/homeFragment"
-            android:name="com.lukabaia.yummy.ui.fragments.home.HomeFragment"
+            android:name="com.lukabaia.yummy.ui.fragments.HomeFragment"
             android:label="fragment_home"
             tools:layout="@layout/fragment_home">
             <action
@@ -36,7 +36,7 @@
         </fragment>
         <fragment
             android:id="@+id/detailedFragment"
-            android:name="com.lukabaia.yummy.ui.fragments.detailed.DetailedFragment"
+            android:name="com.lukabaia.yummy.ui.fragments.DetailedFragment"
             android:label="fragment_detailed"
             tools:layout="@layout/fragment_detailed" >
             <argument
@@ -45,7 +45,7 @@
         </fragment>
         <fragment
             android:id="@+id/randomFragment"
-            android:name="com.lukabaia.yummy.ui.fragments.randomizer.RandomFragment"
+            android:name="com.lukabaia.yummy.ui.fragments.RandomFragment"
             android:label="fragment_random"
             tools:layout="@layout/fragment_random" >
             <action
@@ -65,7 +65,7 @@
         </fragment>
         <fragment
             android:id="@+id/searchFragment"
-            android:name="com.lukabaia.yummy.ui.fragments.searchResult.SearchFragment"
+            android:name="com.lukabaia.yummy.ui.fragments.SearchFragment"
             android:label="fragment_search"
             tools:layout="@layout/fragment_search" >
             <action
@@ -81,7 +81,7 @@
         app:startDestination="@id/favouritesFragment">
         <fragment
             android:id="@+id/favouritesFragment"
-            android:name="com.lukabaia.yummy.ui.fragments.favourites.FavouritesFragment"
+            android:name="com.lukabaia.yummy.ui.fragments.FavouritesFragment"
             android:label="fragment_favourites"
             tools:layout="@layout/fragment_favourites" >
             <action
@@ -101,7 +101,7 @@
         </fragment>
         <fragment
             android:id="@+id/detailedFragment2"
-            android:name="com.lukabaia.yummy.ui.fragments.detailed.DetailedFragment"
+            android:name="com.lukabaia.yummy.ui.fragments.DetailedFragment"
             android:label="fragment_detailed"
             tools:layout="@layout/fragment_detailed" >
             <argument
@@ -110,13 +110,13 @@
         </fragment>
         <fragment
             android:id="@+id/assistantFragment"
-            android:name="com.lukabaia.yummy.ui.fragments.assistant.AssistantFragment"
+            android:name="com.lukabaia.yummy.ui.fragments.AssistantFragment"
             android:label="fragment_assistant"
             tools:layout="@layout/fragment_assistant" />
     </navigation>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.lukabaia.yummy.ui.fragments.profile.ProfileFragment"
+        android:name="com.lukabaia.yummy.ui.fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

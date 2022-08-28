@@ -1,4 +1,4 @@
-package com.lukabaia.yummy.ui.fragments.login
+package com.lukabaia.yummy.ui.fragments
 
 import android.content.Intent
 import androidx.navigation.fragment.findNavController

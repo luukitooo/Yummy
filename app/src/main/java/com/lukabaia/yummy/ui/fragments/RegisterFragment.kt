@@ -1,4 +1,4 @@
-package com.lukabaia.yummy.ui.fragments.register
+package com.lukabaia.yummy.ui.fragments
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle

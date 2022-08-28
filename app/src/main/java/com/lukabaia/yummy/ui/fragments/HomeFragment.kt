@@ -1,4 +1,4 @@
-package com.lukabaia.yummy.ui.fragments.home
+package com.lukabaia.yummy.ui.fragments
 
 import android.util.Log
 import androidx.core.view.isVisible

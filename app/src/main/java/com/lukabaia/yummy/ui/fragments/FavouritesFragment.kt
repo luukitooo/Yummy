@@ -1,4 +1,4 @@
-package com.lukabaia.yummy.ui.fragments.favourites
+package com.lukabaia.yummy.ui.fragments
 
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope

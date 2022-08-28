@@ -3,7 +3,7 @@ package com.lukabaia.yummy.repository
 import android.app.Application
 import com.lukabaia.yummy.R
 import com.lukabaia.yummy.model.network.SearchedRecipesInfo
-import com.lukabaia.yummy.network.SearchRecipesApi
+import com.lukabaia.yummy.network.recipes.SearchRecipesApi
 
 class SearchRepository(
     private val api: SearchRecipesApi,

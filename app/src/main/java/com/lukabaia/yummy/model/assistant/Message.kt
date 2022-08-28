@@ -1,4 +1,4 @@
-package com.lukabaia.yummy.model
+package com.lukabaia.yummy.model.assistant
 
 data class Message(
     val id: Int,

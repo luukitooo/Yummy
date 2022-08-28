@@ -3,6 +3,11 @@ package com.lukabaia.yummy.di
 import androidx.room.Room
 import com.lukabaia.yummy.data.RecipesDatabase
 import com.lukabaia.yummy.network.*
+import com.lukabaia.yummy.network.assistant.AssistantAnswerApi
+import com.lukabaia.yummy.network.assistant.SuggestsApi
+import com.lukabaia.yummy.network.recipes.DetailedRecipesApi
+import com.lukabaia.yummy.network.recipes.RandomRecipesApi
+import com.lukabaia.yummy.network.recipes.SearchRecipesApi
 import com.lukabaia.yummy.repository.*
 import com.lukabaia.yummy.viewModels.*
 import org.koin.androidx.viewmodel.dsl.viewModel

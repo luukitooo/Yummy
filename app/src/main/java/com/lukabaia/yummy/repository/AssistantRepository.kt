@@ -4,8 +4,8 @@ import android.app.Application
 import com.lukabaia.yummy.R
 import com.lukabaia.yummy.model.assistant.AssistantAnswer
 import com.lukabaia.yummy.model.assistant.SuggestsInfo
-import com.lukabaia.yummy.network.AssistantAnswerApi
-import com.lukabaia.yummy.network.SuggestsApi
+import com.lukabaia.yummy.network.assistant.AssistantAnswerApi
+import com.lukabaia.yummy.network.assistant.SuggestsApi
 
 class AssistantRepository(
     private val suggestsApi: SuggestsApi,

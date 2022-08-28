@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/grey_note"
     android:orientation="vertical"
-    tools:context=".ui.fragments.login.LoginFragment">
+    tools:context=".ui.fragments.LoginFragment">
 
     <FrameLayout
         android:id="@+id/frameLayout2"

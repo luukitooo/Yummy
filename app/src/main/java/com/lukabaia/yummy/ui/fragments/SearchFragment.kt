@@ -1,4 +1,4 @@
-package com.lukabaia.yummy.ui.fragments.searchResult
+package com.lukabaia.yummy.ui.fragments
 
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope

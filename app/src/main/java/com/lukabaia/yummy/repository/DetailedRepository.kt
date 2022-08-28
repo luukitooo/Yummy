@@ -5,7 +5,7 @@ import com.lukabaia.yummy.R
 import com.lukabaia.yummy.data.RecipesDatabase
 import com.lukabaia.yummy.model.FavoriteRecipe
 import com.lukabaia.yummy.model.network.DetailedRecipesInfo
-import com.lukabaia.yummy.network.DetailedRecipesApi
+import com.lukabaia.yummy.network.recipes.DetailedRecipesApi
 
 class DetailedRepository(
     private val api: DetailedRecipesApi,

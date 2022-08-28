@@ -1,10 +1,10 @@
-package com.lukabaia.yummy.ui.fragments.assistant
+package com.lukabaia.yummy.ui.fragments
 
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.lifecycleScope
 import com.lukabaia.yummy.adapter.MessagesAdapter
 import com.lukabaia.yummy.databinding.FragmentAssistantBinding
-import com.lukabaia.yummy.model.Message
+import com.lukabaia.yummy.model.assistant.Message
 import com.lukabaia.yummy.model.assistant.SuggestsInfo
 import com.lukabaia.yummy.ui.fragments.base.BaseFragment
 import com.lukabaia.yummy.viewModels.AssistantViewModel

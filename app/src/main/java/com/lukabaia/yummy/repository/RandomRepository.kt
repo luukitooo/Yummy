@@ -3,7 +3,7 @@ package com.lukabaia.yummy.repository
 import android.app.Application
 import com.lukabaia.yummy.R
 import com.lukabaia.yummy.model.network.RandomRecipesInfo
-import com.lukabaia.yummy.network.RandomRecipesApi
+import com.lukabaia.yummy.network.recipes.RandomRecipesApi
 
 class RandomRepository(
     private val api: RandomRecipesApi,

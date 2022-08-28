@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.lukabaia.yummy.databinding.ItemMessageAssistantBinding
 import com.lukabaia.yummy.databinding.ItemMessageUserBinding
-import com.lukabaia.yummy.model.Message
+import com.lukabaia.yummy.model.assistant.Message
 
 class MessagesAdapter : ListAdapter<Message, RecyclerView.ViewHolder>(MessageItemCallback) {
 

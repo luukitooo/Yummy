@@ -1,5 +1,10 @@
 package com.lukabaia.yummy.network
 
+import com.lukabaia.yummy.network.assistant.AssistantAnswerApi
+import com.lukabaia.yummy.network.assistant.SuggestsApi
+import com.lukabaia.yummy.network.recipes.DetailedRecipesApi
+import com.lukabaia.yummy.network.recipes.RandomRecipesApi
+import com.lukabaia.yummy.network.recipes.SearchRecipesApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

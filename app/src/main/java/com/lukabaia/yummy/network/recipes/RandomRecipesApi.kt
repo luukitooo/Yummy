@@ -1,4 +1,4 @@
-package com.lukabaia.yummy.network
+package com.lukabaia.yummy.network.recipes
 
 import com.lukabaia.yummy.model.network.RandomRecipesInfo
 import retrofit2.Response

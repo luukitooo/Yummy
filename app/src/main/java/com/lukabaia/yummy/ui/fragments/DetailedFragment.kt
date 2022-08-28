@@ -1,4 +1,4 @@
-package com.lukabaia.yummy.ui.fragments.detailed
+package com.lukabaia.yummy.ui.fragments
 
 import android.content.Intent
 import android.text.Html

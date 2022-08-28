@@ -1,18 +1,14 @@
-package com.lukabaia.yummy.ui.fragments.profile
+package com.lukabaia.yummy.ui.fragments
 
 import android.content.Intent
-import androidx.fragment.app.viewModels
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.lukabaia.yummy.databinding.FragmentProfileBinding
 import com.lukabaia.yummy.model.UserInfo
 import com.lukabaia.yummy.ui.activities.AuthActivity
 import com.lukabaia.yummy.ui.fragments.base.BaseFragment
-import com.lukabaia.yummy.viewModels.ProfileViewModel
 
 class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBinding::inflate) {
-
-    private val viewModel: ProfileViewModel by viewModels()
 
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
     private val databaseReference: DatabaseReference =
@@ -26,7 +22,6 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
     }
 
     override fun init() {
-
         // database
         showData()
     }

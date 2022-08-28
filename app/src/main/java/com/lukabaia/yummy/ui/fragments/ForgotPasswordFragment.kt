@@ -1,4 +1,4 @@
-package com.lukabaia.yummy.ui.fragments.forgotPassword
+package com.lukabaia.yummy.ui.fragments
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -13,7 +13,8 @@ import com.lukabaia.yummy.utils.ResultOf
 import com.lukabaia.yummy.viewModels.ForgotPasswordViewModel
 import kotlinx.coroutines.launch
 
-class ForgotPasswordFragment : BaseFragment<FragmentForgotPasswordBinding>(FragmentForgotPasswordBinding::inflate) {
+class ForgotPasswordFragment : BaseFragment<FragmentForgotPasswordBinding>(
+    FragmentForgotPasswordBinding::inflate) {
 
     private val viewModel: ForgotPasswordViewModel by viewModels()
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey_note"
-    tools:context=".ui.fragments.assistant.AssistantFragment">
+    tools:context=".ui.fragments.AssistantFragment">
 
     <FrameLayout
         android:id="@+id/frameLayout4"

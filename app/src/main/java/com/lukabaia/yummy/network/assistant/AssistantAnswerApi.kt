@@ -1,4 +1,4 @@
-package com.lukabaia.yummy.network
+package com.lukabaia.yummy.network.assistant
 
 import com.lukabaia.yummy.model.assistant.AssistantAnswer
 import retrofit2.Response
