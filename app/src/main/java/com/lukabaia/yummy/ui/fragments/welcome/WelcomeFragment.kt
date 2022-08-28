@@ -14,18 +14,12 @@ class WelcomeFragment : BaseFragment<FragmentWelcomeBinding>(FragmentWelcomeBind
         binding.btnStart.setOnClickListener {
             findNavController().navigate(WelcomeFragmentDirections.toLoginFragment())
         }
-
-//        binding.tvProfile.setOnClickListener {
-//            findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToRandomFragment())
-//        }
     }
 
     override fun init() {
-
     }
 
     override fun observers() {
-
     }
 
 }

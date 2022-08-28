@@ -14,7 +14,7 @@
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Assistant" />
+        android:text="@string/assistant" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvMessage"
@@ -23,7 +23,7 @@
         android:layout_marginTop="4dp"
         android:background="@drawable/shape_message_assistant"
         android:padding="16dp"
-        android:text="message goes here"
+        android:text="@string/message_goes_here"
         android:textColor="@color/black"
         android:textSize="18sp" />
 

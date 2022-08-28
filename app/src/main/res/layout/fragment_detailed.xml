@@ -60,7 +60,7 @@
             android:layout_marginTop="36dp"
             android:fontFamily="@font/actor_regular"
             android:gravity="center"
-            android:text="Recipe Title"
+            android:text="@string/recipe_title"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:visibility="invisible" />
@@ -81,7 +81,7 @@
             android:isScrollContainer="true"
             android:overScrollMode="never"
             android:paddingBottom="16dp"
-            android:text="Summary goes here..."
+            android:text="@string/summary_goes_here"
             android:textSize="18sp"
             android:visibility="invisible" />
 
@@ -92,7 +92,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:gravity="center"
-            android:text="Extended Ingredients"
+            android:text="@string/extended_ingredients"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold"

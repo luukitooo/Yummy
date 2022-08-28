@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey_note"
-    tools:context=".ui.fragments.AssistantFragment">
+    tools:context=".ui.fragments.assistant.AssistantFragment">
 
     <FrameLayout
         android:id="@+id/frameLayout4"
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Assistant"
+            android:text="@string/assistant"
             android:textColor="@color/black"
             android:textSize="24sp" />
 
@@ -66,9 +66,9 @@
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/shape_search"
-        android:hint="Message"
+        android:hint="@string/message"
         android:padding="16dp"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnSend"
         app:layout_constraintStart_toStartOf="parent" />

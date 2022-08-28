@@ -40,7 +40,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
 
     override fun init() {
 
-        // database // storage
+        // database
         showData()
     }
 

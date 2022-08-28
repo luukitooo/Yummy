@@ -27,7 +27,7 @@
             android:fontFamily="@font/actor_regular"
             android:gravity="center"
             android:orientation="vertical"
-            android:text="Recipe Title"
+            android:text="@string/recipe_title"
             android:textColor="@color/black"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
