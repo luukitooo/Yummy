@@ -1,13 +1,11 @@
 package com.lukabaia.yummy.ui.fragments.detailed
 
+import android.content.Context
+import android.content.Intent
 import android.text.Html
 import android.util.Log
 import android.view.View
-import android.view.View.inflate
-import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.core.view.forEach
-import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
@@ -22,6 +20,7 @@ import com.lukabaia.yummy.utils.ResponseHandler
 import com.lukabaia.yummy.viewModels.DetailedViewModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 class DetailedFragment : BaseFragment<FragmentDetailedBinding>(FragmentDetailedBinding::inflate) {
 
@@ -54,6 +53,11 @@ class DetailedFragment : BaseFragment<FragmentDetailedBinding>(FragmentDetailedB
                 handleSaving(getRecipe())
                 isSaved = !isSaved
             }
+        }
+        btnPlay.setOnClickListener {
+            searchInYoutube(
+                query = binding.tvTitle.text.toString()
+            )
         }
     }
 
@@ -119,5 +123,15 @@ class DetailedFragment : BaseFragment<FragmentDetailedBinding>(FragmentDetailedB
         title = binding.tvTitle.text.toString(),
         image = image
     )
+
+    private fun searchInYoutube(query: String) {
+        val intent = Intent(Intent.ACTION_SEARCH)
+        intent.apply {
+            setPackage("com.google.android.youtube")
+            putExtra("query", query)
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        }
+        startActivity(intent)
+    }
 
 }

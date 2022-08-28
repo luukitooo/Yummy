@@ -108,7 +108,28 @@
             android:visibility="invisible"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:spanCount="2"
+            tools:itemCount="2"
             tools:listitem="@layout/item_ingredient" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPlay"
+            style="@style/Widget.Material3.FloatingActionButton.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:drawableEnd="@drawable/ic_play"
+            android:drawableTint="@color/white"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="18dp"
+            android:src="@drawable/ic_play"
+            android:text="@string/search_in_youtube"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:backgroundTint="@color/orange"
+            app:fabCustomSize="70dp"
+            app:rippleColor="@color/white"
+            app:tint="@color/white" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
