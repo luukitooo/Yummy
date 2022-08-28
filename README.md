@@ -4,8 +4,22 @@
 
 ## About App:
 This is an app that will help you find food recipes. It also has an assistant that you can ask any question about the food. 
+</br></br>
+
+## Used in Project:
+- Firebase Auth
+- Firebase Realtime Database
+- Retrofit
+- Room
+- Dependency Injection
+- Coroutines
+- ViewBinding
+- RecyclerView
+- Navigation Component
+- Bottom Navigation View
+- Splash Screen
+- Launcher Icon
 </br>
-Now let's talk about pages...
 
 ### Home Page:
 Here you can search for recipes by category.
