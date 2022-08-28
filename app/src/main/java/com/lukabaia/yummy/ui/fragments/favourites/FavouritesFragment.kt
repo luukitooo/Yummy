@@ -1,21 +1,17 @@
 package com.lukabaia.yummy.ui.fragments.favourites
 
-import android.widget.SeekBar
-import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
-import com.lukabaia.yummy.R
 import com.lukabaia.yummy.adapter.FavoritesAdapter
 import com.lukabaia.yummy.databinding.FragmentFavouritesBinding
 import com.lukabaia.yummy.model.FavoriteRecipe
 import com.lukabaia.yummy.ui.fragments.base.BaseFragment
 import com.lukabaia.yummy.utils.ResponseHandler
 import com.lukabaia.yummy.viewModels.FavouritesViewModel
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import com.lukabaia.yummy.repository.RandomRepository
 import com.lukabaia.yummy.utils.ResponseHandler
 import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 
 class RandomViewModel(private val randomRepository: RandomRepository) : ViewModel() {

@@ -10,7 +10,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import com.google.android.material.snackbar.Snackbar
 import com.lukabaia.yummy.R
 import com.lukabaia.yummy.databinding.FragmentRandomBinding
 import com.lukabaia.yummy.model.network.RandomRecipesInfo

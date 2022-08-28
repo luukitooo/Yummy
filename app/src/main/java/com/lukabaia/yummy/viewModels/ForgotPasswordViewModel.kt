@@ -1,6 +1,5 @@
 package com.lukabaia.yummy.viewModels
 
-import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseAuth

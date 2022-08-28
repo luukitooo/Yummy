@@ -1,6 +1,5 @@
 package com.lukabaia.yummy.ui.fragments.detailed
 
-import android.content.Context
 import android.content.Intent
 import android.text.Html
 import android.util.Log
@@ -20,7 +19,6 @@ import com.lukabaia.yummy.utils.ResponseHandler
 import com.lukabaia.yummy.viewModels.DetailedViewModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
 
 class DetailedFragment : BaseFragment<FragmentDetailedBinding>(FragmentDetailedBinding::inflate) {
 

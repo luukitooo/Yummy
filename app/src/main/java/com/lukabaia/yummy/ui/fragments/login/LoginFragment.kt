@@ -1,23 +1,13 @@
 package com.lukabaia.yummy.ui.fragments.login
 
 import android.content.Intent
-import android.widget.Toast
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
 import com.lukabaia.yummy.R
 import com.lukabaia.yummy.databinding.FragmentLoginBinding
 import com.lukabaia.yummy.ui.activities.MainActivity
 import com.lukabaia.yummy.ui.fragments.base.BaseFragment
-import com.lukabaia.yummy.utils.ResultOf
-import com.lukabaia.yummy.viewModels.FavouritesViewModel
-import com.lukabaia.yummy.viewModels.LoginViewModel
-import kotlinx.coroutines.launch
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 

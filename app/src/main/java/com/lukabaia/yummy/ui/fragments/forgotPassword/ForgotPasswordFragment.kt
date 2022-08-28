@@ -1,17 +1,14 @@
 package com.lukabaia.yummy.ui.fragments.forgotPassword
 
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.auth.FirebaseAuth
 import com.lukabaia.yummy.R
 import com.lukabaia.yummy.databinding.FragmentForgotPasswordBinding
 import com.lukabaia.yummy.ui.fragments.base.BaseFragment
-import com.lukabaia.yummy.ui.fragments.login.LoginFragmentDirections
 import com.lukabaia.yummy.utils.ResultOf
 import com.lukabaia.yummy.viewModels.ForgotPasswordViewModel
 import kotlinx.coroutines.launch

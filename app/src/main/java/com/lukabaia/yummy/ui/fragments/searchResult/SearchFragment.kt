@@ -2,7 +2,6 @@ package com.lukabaia.yummy.ui.fragments.searchResult
 
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.lukabaia.yummy.adapter.RecipeAdapter
@@ -15,7 +14,6 @@ import com.lukabaia.yummy.utils.ResponseHandler
 import com.lukabaia.yummy.viewModels.SearchViewModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
 
 class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding::inflate) {
 

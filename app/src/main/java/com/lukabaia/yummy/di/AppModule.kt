@@ -1,15 +1,12 @@
 package com.lukabaia.yummy.di
 
 import androidx.room.Room
-import com.lukabaia.yummy.adapter.FavoritesAdapter
 import com.lukabaia.yummy.data.RecipesDatabase
 import com.lukabaia.yummy.network.*
 import com.lukabaia.yummy.repository.*
 import com.lukabaia.yummy.viewModels.*
 import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.core.scope.get
 import org.koin.dsl.module
-import kotlin.math.sin
 
 val appModule = module {
 

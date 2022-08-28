@@ -1,7 +1,6 @@
 package com.lukabaia.yummy.ui.fragments.home
 
 import android.util.Log
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController

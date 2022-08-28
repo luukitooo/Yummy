@@ -1,6 +1,5 @@
 package com.lukabaia.yummy.viewModels
 
-import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.android.gms.tasks.Task

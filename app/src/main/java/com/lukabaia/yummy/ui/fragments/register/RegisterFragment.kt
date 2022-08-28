@@ -1,6 +1,5 @@
 package com.lukabaia.yummy.ui.fragments.register
 
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope

@@ -1,13 +1,8 @@
 package com.lukabaia.yummy.ui.activities
 
-import android.app.Activity
-import android.content.res.XmlResourceParser
-import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.lukabaia.yummy.R
 import com.lukabaia.yummy.databinding.ActivityMainBinding
