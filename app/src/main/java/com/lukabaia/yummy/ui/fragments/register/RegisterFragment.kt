@@ -46,6 +46,10 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
                     Snackbar.make(binding.root, getString(R.string.pass_not_match), Snackbar.LENGTH_LONG)
                         .show()
                 }
+                isNotValidUsername() -> {
+                    Snackbar.make(binding.root, getString(R.string.first_char_num), Snackbar.LENGTH_LONG)
+                        .show()
+                }
                 else -> {
                     doRegistration()
                     observerRegistration()
@@ -65,17 +69,18 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
         return@with binding.etEmail.text.toString().isEmpty() ||
                 binding.etPassword.text.toString().isEmpty()
     }
+    override fun observers() {
+    }
+    private fun isNotValidUsername() : Boolean = with(binding){
+        return@with binding.etUsername.text.toString()[0].isDigit()
+
+    }
 
     private fun passwordsMatch(): Boolean = with(binding) {
         return@with binding.etPassword.text.toString() == binding.etRepeatPassword.text.toString()
     }
 
-    override fun init() {
-    }
 
-    override fun observers() {
-
-    }
 
     private fun doRegistration() {
         val userName = binding.etUsername.text.toString()
@@ -101,6 +106,9 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
                 }
             }
         }
-
     }
+    override fun init() {
+    }
+
+
 }
