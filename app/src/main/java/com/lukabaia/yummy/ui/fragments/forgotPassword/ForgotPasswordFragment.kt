@@ -6,6 +6,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.lukabaia.yummy.R
 import com.lukabaia.yummy.databinding.FragmentForgotPasswordBinding
@@ -23,7 +24,8 @@ class ForgotPasswordFragment : BaseFragment<FragmentForgotPasswordBinding>(Fragm
 
         binding.btnSend.setOnClickListener {
             when {
-                isEmptyField() -> Toast.makeText(context, getString(R.string.empty_fields_error), Toast.LENGTH_SHORT).show()
+                isEmptyField() ->
+                    Snackbar.make(binding.root, getString(R.string.empty_fields_error), Snackbar.LENGTH_LONG).show()
                 else ->
                     doRestore()
             }
@@ -51,11 +53,11 @@ class ForgotPasswordFragment : BaseFragment<FragmentForgotPasswordBinding>(Fragm
                 viewModel.passRestore.collect{
                     when (it) {
                         is ResultOf.Success -> {
-                            Toast.makeText(context, getString(R.string.recovery_success), Toast.LENGTH_SHORT).show()
+                            Snackbar.make(binding.root, getString(R.string.recovery_success), Snackbar.LENGTH_LONG).show()
                             findNavController().navigate(ForgotPasswordFragmentDirections.toLoginFragment())
                         }
                         is ResultOf.Failure -> {
-                            Toast.makeText(context, getString(R.string.recovery_error), Toast.LENGTH_SHORT).show()
+                            Snackbar.make(binding.root, getString(R.string.recovery_error), Snackbar.LENGTH_LONG).show()
                         }
                     }
                 }

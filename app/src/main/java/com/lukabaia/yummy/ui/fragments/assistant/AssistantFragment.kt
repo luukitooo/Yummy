@@ -1,4 +1,4 @@
-package com.lukabaia.yummy.ui.fragments
+package com.lukabaia.yummy.ui.fragments.assistant
 
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.lifecycleScope

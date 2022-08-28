@@ -28,7 +28,7 @@
         android:layout_marginHorizontal="16dp"
         android:background="@drawable/shape_search"
         android:fontFamily="@font/actor_regular"
-        android:hint="Search"
+        android:hint="@string/search"
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/btnBack"
         app:layout_constraintEnd_toStartOf="@+id/btnSearch"

@@ -110,7 +110,7 @@
         </fragment>
         <fragment
             android:id="@+id/assistantFragment"
-            android:name="com.lukabaia.yummy.ui.fragments.AssistantFragment"
+            android:name="com.lukabaia.yummy.ui.fragments.assistant.AssistantFragment"
             android:label="fragment_assistant"
             tools:layout="@layout/fragment_assistant" />
     </navigation>

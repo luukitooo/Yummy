@@ -8,7 +8,7 @@
 
     <string name="app_name">Yummy</string>
     <string name="register_success">\"You have registered successfully! \"</string>
-    <string name="error">This mail is already used!</string>
+    <string name="mail_error">This mail is already used!</string>
     <string name="pass_not_match">Passwords do not match!</string>
     <string name="login_error">Email or password is not correct!</string>
     <string name="empty_fields_error">Please fill in all the fields!</string>
@@ -24,4 +24,43 @@
     <string name="randomizer">Randomizer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="assistant">Assistant</string>
+    <string name="message">Message</string>
+    <string name="recipe_title">Recipe Title</string>
+    <string name="summary_goes_here">Summary goes here...</string>
+    <string name="extended_ingredients">Extended Ingredients</string>
+    <string name="favorites">Favorites</string>
+    <string name="enter_an_email_address">Enter an email address:</string>
+    <string name="email_address">Email address</string>
+    <string name="food_for_you">Delicious\nfood for you</string>
+    <string name="search">Search</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign-up</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="my_profile">My Profile</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="about_us">About Us</string>
+    <string name="faq">FAQ</string>
+    <string name="log_out">Log Out</string>
+    <string name="god_dammit_what_do_i_want">God Dammit What Do I Want?</string>
+    <string name="ready_in_minutes">Ready in minutes:</string>
+    <string name="is_vegan">Is vegan:</string>
+    <string name="is_cheap">Is cheap:</string>
+    <string name="is_popular">Is popular:</string>
+    <string name="score">Score:</string>
+    <string name="generate">Generate</string>
+    <string name="username">Username</string>
+    <string name="sign_in">Sign up</string>
+    <string name="app_name_yummy">YUMMY</string>
+    <string name="get_started">Get Started</string>
+    <string name="category">Category</string>
+    <string name="ingredient_name">Ingredient Name</string>
+    <string name="amount">Amount:</string>
+    <string name="load">...</string>
+    <string name="consistency">Consistency:</string>
+    <string name="meta">Meta:</string>
+    <string name="message_goes_here">message goes here</string>
+    <string name="me">Me</string>
+    <string name="try_again">Try again</string>
 </resources>

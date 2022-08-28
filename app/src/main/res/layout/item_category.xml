@@ -15,7 +15,7 @@
         android:fontFamily="@font/actor_regular"
         android:gravity="center"
         android:padding="16dp"
-        android:text="Category"
+        android:text="@string/category"
         android:textColor="@color/white"
         android:textSize="18sp" />
 
