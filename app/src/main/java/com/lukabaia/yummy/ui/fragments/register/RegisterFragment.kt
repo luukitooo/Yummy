@@ -47,7 +47,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
                         .show()
                 }
                 isNotValidUsername() -> {
-                    Snackbar.make(binding.root, getString(R.string.first_char_num), Snackbar.LENGTH_LONG)
+                    Snackbar.make(binding.root, getString(R.string.first_char_number_error), Snackbar.LENGTH_LONG)
                         .show()
                 }
                 else -> {
