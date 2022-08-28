@@ -41,6 +41,11 @@ He can also tell jokes.
 </br></br>
 <img src="https://user-images.githubusercontent.com/107555010/187070879-d10e610a-f62f-477c-b862-8642bf402267.jpg" width="200">
 
+### Randomizer Page:
+This page will generate a random recipe for you.
+</br></br>
+<img src="https://user-images.githubusercontent.com/107555010/187071720-385d4497-88f7-4b4c-b39f-22a971ea51db.jpg" width="200">
+
 ### Other:
 These are the login and profile pages. Nothing special happens here.
 </br></br>
