@@ -48,10 +48,9 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                 }
                 else -> {
                    doLogIn()
-
+                    observerLogIn()
                 }
             }
-            observerLogIn()
         }
     }
 

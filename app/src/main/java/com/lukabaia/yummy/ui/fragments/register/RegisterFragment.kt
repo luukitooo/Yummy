@@ -37,7 +37,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
                         getString(R.string.invalid_email_error),
                         Snackbar.LENGTH_LONG).show()
                 }
-                isValidPassword() -> {
+                isNotValidPassword() -> {
                     Snackbar.make(binding.root,
                         getString(R.string.password_length_limit),
                         Snackbar.LENGTH_LONG).show()
@@ -48,16 +48,15 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
                 }
                 else -> {
                     doRegistration()
+                    observerRegistration()
                 }
             }
-            observerRegistration()
         }
     }
 
-    private fun isValidPassword(): Boolean = with(binding) {
+    private fun isNotValidPassword(): Boolean = with(binding) {
         return@with binding.etPassword.text.toString().length < 8
     }
-
 
     private fun isValidEmail(): Boolean =
         android.util.Patterns.EMAIL_ADDRESS.matcher(binding.etEmail.text.toString()).matches()
@@ -75,6 +74,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
     }
 
     override fun observers() {
+
     }
 
     private fun doRegistration() {
@@ -86,6 +86,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
     }
 
     private fun observerRegistration() {
+
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.registrationStatus.collect {
@@ -100,5 +101,6 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
                 }
             }
         }
+
     }
 }

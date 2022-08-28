@@ -8,6 +8,7 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.lukabaia.yummy.model.UserInfo
 import com.lukabaia.yummy.utils.ResultOf
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -23,7 +24,7 @@ class RegisterViewModel : ViewModel() {
     private var _registrationStatus = MutableStateFlow<ResultOf<String>>(ResultOf.Success())
     var registrationStatus = _registrationStatus.asStateFlow()
 
-    fun signUp(email: String, password: String,userInfo: com.lukabaia.yummy.model.UserInfo) {
+    fun signUp(email: String, password: String,userInfo: UserInfo) {
         viewModelScope.launch {
             signUpResponse(email, password, userInfo).collect{
                 _registrationStatus.value = it
@@ -31,7 +32,7 @@ class RegisterViewModel : ViewModel() {
         }
     }
 
-    private fun signUpResponse(email: String, password: String, userInfo: com.lukabaia.yummy.model.UserInfo) = flow {
+    private fun signUpResponse(email: String, password: String, userInfo: UserInfo) = flow {
         try {
             auth?.let { authentication ->
                 authentication.createUserWithEmailAndPassword(email, password)

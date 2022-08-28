@@ -30,80 +30,15 @@ import kotlinx.coroutines.launch
 class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBinding::inflate) {
 
     private val viewModel: ProfileViewModel by viewModels()
-    private var imageUri: Uri? = null
-    private var storage: FirebaseStorage? = null
-    private var storageReference = Firebase.storage
-    private var auth: FirebaseAuth? = null
-    private val PICK_IMAGE_REQUEST = 71
-
 
     override fun listeners() {
         binding.btnLogout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             startActivity(Intent(this@ProfileFragment.requireContext(), AuthActivity::class.java))
         }
-
-//        binding.btnSelectImage.setOnClickListener {
-//            selectImage()
-//        }
-//
-//        binding.btnUpdate.setOnClickListener {
-//            uploadImage()
-//        }
-    }
-
-    private fun selectImage() {
-        val intent = Intent()
-        intent.type = "image/"
-        intent.action = Intent.ACTION_GET_CONTENT
-        startActivityForResult(Intent.createChooser(intent, "Images"), PICK_IMAGE_REQUEST)
-
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK) {
-
-            if (data == null || data.data == null) {
-                return
-            }
-
-            imageUri = data.data
-            binding.imgProfileImage.setImageURI(imageUri)
-            d("log", "update1 - ${imageUri}")
-        }
-    }
-
-    private fun uploadImage() {
-
-        imageUri?.let {
-            storageReference.getReference("Images").child(System.currentTimeMillis().toString())
-                .putFile(it)
-                .addOnSuccessListener { task ->
-                    task.metadata!!.reference!!.downloadUrl
-                        .addOnSuccessListener {
-                            val uid = FirebaseAuth.getInstance().currentUser!!.uid
-                            val imageMap = mapOf("uri" to imageUri.toString())
-                            val databaseReference =
-                                FirebaseDatabase.getInstance().getReference("userImages")
-                            databaseReference.child(uid).setValue(imageMap)
-                                .addOnSuccessListener {
-                                    Toast.makeText(context, "success", Toast.LENGTH_SHORT).show()
-                                    d("log", "image uploaded to database - ${imageMap}")
-                                }
-                                .addOnFailureListener {
-                                    Toast.makeText(context, it.toString(), Toast.LENGTH_SHORT)
-                                        .show()
-                                }
-                        }
-                }
-        }
     }
 
     override fun init() {
-        auth = FirebaseAuth.getInstance()
-        storage = FirebaseStorage.getInstance()
-        storageReference = FirebaseStorage.getInstance()
 
         // database // storage
         showData()
