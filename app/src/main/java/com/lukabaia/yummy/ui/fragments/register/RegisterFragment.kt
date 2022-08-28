@@ -42,7 +42,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
                         getString(R.string.password_length_limit),
                         Snackbar.LENGTH_LONG).show()
                 }
-                passwordsMatch() -> {
+                !passwordsMatch() -> {
                     Snackbar.make(binding.root, getString(R.string.pass_not_match), Snackbar.LENGTH_LONG)
                         .show()
                 }
@@ -67,7 +67,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
     }
 
     private fun passwordsMatch(): Boolean = with(binding) {
-        return@with binding.etPassword.text == binding.etRepeatPassword.text
+        return@with binding.etPassword.text.toString() == binding.etRepeatPassword.text.toString()
     }
 
     override fun init() {
