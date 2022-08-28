@@ -15,6 +15,8 @@ import org.koin.dsl.module
 
 val appModule = module {
 
+    // Repositories
+
     single<SearchRecipesApi> {
         RetrofitInstance.getSearchedRecipesApi()
     }
@@ -26,16 +28,6 @@ val appModule = module {
         )
     }
 
-    viewModel<HomeViewModel> {
-        HomeViewModel(
-            homeRepository = get()
-        )
-    }
-
-    single<DetailedRecipesApi> {
-        RetrofitInstance.getDetailedRecipesApi()
-    }
-
     single<DetailedRepository> {
         DetailedRepository(
             api = get(),
@@ -44,10 +36,76 @@ val appModule = module {
         )
     }
 
+    single<RandomRepository> {
+        RandomRepository(
+            api = get(),
+            application = get()
+        )
+    }
+
+    single<FavoritesRepository> {
+        FavoritesRepository(
+            database = get()
+        )
+    }
+
+    single<SearchRepository> {
+        SearchRepository(
+            api = get(),
+            application = get()
+        )
+    }
+
+    single<AssistantRepository> {
+        AssistantRepository(
+            suggestsApi = get(),
+            assistantAnswerApi = get(),
+            application = get()
+        )
+    }
+
+    // ViewModels
+
+    viewModel<HomeViewModel> {
+        HomeViewModel(
+            homeRepository = get()
+        )
+    }
+
     viewModel<DetailedViewModel> {
         DetailedViewModel(
             detailedRepository = get()
         )
+    }
+
+    viewModel<RandomViewModel> {
+        RandomViewModel(
+            randomRepository = get()
+        )
+    }
+
+    viewModel<FavouritesViewModel> {
+        FavouritesViewModel(
+            favoritesRepository = get()
+        )
+    }
+
+    viewModel<SearchViewModel> {
+        SearchViewModel(
+            repository = get()
+        )
+    }
+
+    viewModel<AssistantViewModel> {
+        AssistantViewModel(
+            repository = get()
+        )
+    }
+
+    // APIs
+
+    single<DetailedRecipesApi> {
+        RetrofitInstance.getDetailedRecipesApi()
     }
 
     single<RandomRecipesApi> {
@@ -62,18 +120,7 @@ val appModule = module {
         RetrofitInstance.getAssistantAnswersApi()
     }
 
-    single<RandomRepository> {
-        RandomRepository(
-            api = get(),
-            application = get()
-        )
-    }
-
-    viewModel<RandomViewModel> {
-        RandomViewModel(
-            randomRepository = get()
-        )
-    }
+    // Database
 
     single<RecipesDatabase> {
         Room.databaseBuilder(
@@ -81,45 +128,6 @@ val appModule = module {
             RecipesDatabase::class.java,
             "RecipesDB"
         ).build()
-    }
-
-    single<FavoritesRepository> {
-        FavoritesRepository(
-            database = get()
-        )
-    }
-
-    viewModel<FavouritesViewModel> {
-        FavouritesViewModel(
-            favoritesRepository = get()
-        )
-    }
-
-    single<SearchRepository> {
-        SearchRepository(
-            api = get(),
-            application = get()
-        )
-    }
-
-    viewModel<SearchViewModel> {
-        SearchViewModel(
-            repository = get()
-        )
-    }
-
-    single<AssistantRepository> {
-        AssistantRepository(
-            suggestsApi = get(),
-            assistantAnswerApi = get(),
-            application = get()
-        )
-    }
-
-    viewModel<AssistantViewModel> {
-        AssistantViewModel(
-            repository = get()
-        )
     }
 
 }
