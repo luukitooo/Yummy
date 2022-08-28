@@ -24,11 +24,6 @@ class ProfileViewModel : ViewModel() {
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
     private val database: FirebaseDatabase = FirebaseDatabase.getInstance()
     private val databaseReference: DatabaseReference = database.getReference("userInfo")
-    private val databaseReferenceImage: DatabaseReference = database.getReference("userImages")
-
-
-    private val storage: FirebaseStorage = FirebaseStorage.getInstance()
-    private val storageReference = Firebase.storage.getReference("Images")
 
     private var _dataStatus = MutableStateFlow<ResultOf<String>>(ResultOf.Success())
     var dataStatus = _dataStatus.asStateFlow()

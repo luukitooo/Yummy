@@ -21,8 +21,6 @@ import kotlinx.coroutines.launch
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 
-    private val viewModel: LoginViewModel by viewModels()
-
     override fun listeners() {
 
         binding.tvForgotPassword.setOnClickListener {
@@ -47,11 +45,26 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                         .show()
                 }
                 else -> {
-                   doLogIn()
-                    observerLogIn()
+                    login()
                 }
             }
         }
+    }
+
+    private fun login() {
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(
+            binding.etEmail.text.toString(),
+            binding.etPassword.text.toString()
+        ).addOnCompleteListener { task ->
+
+                if (task.isSuccessful) {
+                    startActivity(Intent(requireActivity(), MainActivity::class.java))
+                } else {
+                    Snackbar.make(binding.root,
+                        getString(R.string.login_error),
+                        Snackbar.LENGTH_LONG).show()
+                }
+            }
     }
 
     private fun isValidEmail(): Boolean =
@@ -66,28 +79,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     }
 
     override fun observers() {
-    }
 
-    private fun doLogIn(){
-        val email = binding.etEmail.text.toString()
-        val password = binding.etPassword.text.toString()
-        viewModel.logIn(email, password)
-    }
-
-    private fun observerLogIn(){
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.loginStatus.collect{
-                    when (it) {
-                        is ResultOf.Success -> {
-                            startActivity(Intent(requireActivity(), MainActivity::class.java))
-                        }
-                        is ResultOf.Failure -> {
-                            Snackbar.make(binding.root, getString(R.string.login_error), Snackbar.LENGTH_LONG).show()
-                        }
-                    }
-                }
-            }
-        }
     }
 }
