@@ -7,6 +7,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
 import com.lukabaia.yummy.R
@@ -34,15 +35,15 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         binding.btnLogin.setOnClickListener {
             when {
                 isEmptyField() -> {
-                    Toast.makeText(context,
+                    Snackbar.make(binding.root,
                         getString(R.string.empty_fields_error),
-                        Toast.LENGTH_SHORT)
+                        Snackbar.LENGTH_LONG)
                         .show()
                 }
                 !isValidEmail() -> {
-                    Toast.makeText(context,
+                    Snackbar.make(binding.root,
                         getString(R.string.invalid_email_error),
-                        Toast.LENGTH_SHORT)
+                        Snackbar.LENGTH_LONG)
                         .show()
                 }
                 else -> {
@@ -80,11 +81,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                 viewModel.loginStatus.collect{
                     when (it) {
                         is ResultOf.Success -> {
-                            Toast.makeText(context, getString(R.string.logged_success), Toast.LENGTH_SHORT).show()
                             startActivity(Intent(requireActivity(), MainActivity::class.java))
                         }
                         is ResultOf.Failure -> {
-                            Toast.makeText(context, getString(R.string.login_error), Toast.LENGTH_SHORT).show()
+                            Snackbar.make(binding.root, getString(R.string.login_error), Snackbar.LENGTH_LONG).show()
                         }
                     }
                 }

@@ -6,6 +6,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.lukabaia.yummy.R
 import com.lukabaia.yummy.databinding.FragmentRegisterBinding
 import com.lukabaia.yummy.model.UserInfo
@@ -27,22 +28,22 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
 
             when {
                 isEmptyField() -> {
-                    Toast.makeText(context,
+                    Snackbar.make(binding.root,
                         getString(R.string.empty_fields_error),
-                        Toast.LENGTH_SHORT).show()
+                        Snackbar.LENGTH_LONG).show()
                 }
                 !isValidEmail() -> {
-                    Toast.makeText(context,
+                    Snackbar.make(binding.root,
                         getString(R.string.invalid_email_error),
-                        Toast.LENGTH_SHORT).show()
+                        Snackbar.LENGTH_LONG).show()
                 }
                 isValidPassword() -> {
-                    Toast.makeText(context,
+                    Snackbar.make(binding.root,
                         getString(R.string.password_length_limit),
-                        Toast.LENGTH_SHORT).show()
+                        Snackbar.LENGTH_LONG).show()
                 }
                 passwordsMatch() -> {
-                    Toast.makeText(context, getString(R.string.pass_not_match), Toast.LENGTH_SHORT)
+                    Snackbar.make(binding.root, getString(R.string.pass_not_match), Snackbar.LENGTH_LONG)
                         .show()
                 }
                 else -> {
@@ -73,7 +74,8 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
     override fun init() {
     }
 
-    override fun observers() {}
+    override fun observers() {
+    }
 
     private fun doRegistration() {
         val userName = binding.etUsername.text.toString()
@@ -89,10 +91,10 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
                 viewModel.registrationStatus.collect {
                     when (it) {
                         is ResultOf.Success -> {
-                            Toast.makeText(context, getString(R.string.register_success), Toast.LENGTH_SHORT).show()
+                            requireActivity().onBackPressed()
                         }
                         is ResultOf.Failure -> {
-                            Toast.makeText(context, getString(R.string.already_registered), Toast.LENGTH_SHORT).show()
+                            Snackbar.make(binding.root, getString(R.string.already_registered), Snackbar.LENGTH_LONG).show()
                         }
                     }
                 }

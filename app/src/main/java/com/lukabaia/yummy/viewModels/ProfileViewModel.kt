@@ -33,34 +33,23 @@ class ProfileViewModel : ViewModel() {
     private var _dataStatus = MutableStateFlow<ResultOf<String>>(ResultOf.Success())
     var dataStatus = _dataStatus.asStateFlow()
 
-    fun showRealtimeData(username: TextView, email: TextView,imageView: ImageView) {
+    fun showRealtimeData(username: TextView, email: TextView) {
         viewModelScope.launch {
-            showData(username, email, imageView).collect {
+            showData(username, email).collect {
                 _dataStatus.value = it
             }
         }
     }
 
-    private fun showData(username: TextView, email: TextView, imageView: ImageView) = flow {
+    private fun showData(username: TextView, email: TextView) = flow {
         try {
             if (auth.currentUser?.uid.toString().isNotEmpty()) {
                 databaseReference.child(auth.currentUser?.uid.toString())
                     .addValueEventListener(object : ValueEventListener {
                         override fun onDataChange(snapshot: DataSnapshot) {
-                            val userInfo = snapshot.getValue(UserInfo::class.java)!!
-                            username.text = "User: ${userInfo.username}"
+                            val userInfo = snapshot.getValue(UserInfo::class.java) ?: return
+                            username.text = userInfo.username
                             email.text = userInfo.email
-                            flow { emit(ResultOf.Success<String>()) }
-                        }
-                        override fun onCancelled(error: DatabaseError) {
-                        }
-                    })
-                databaseReferenceImage.child(auth.currentUser?.uid.toString())
-                    .addValueEventListener(object : ValueEventListener {
-                        override fun onDataChange(snapshot: DataSnapshot) {
-                            val image = snapshot.getValue(Image::class.java)!!
-                            imageView.setImageURI(image.url?.toUri())
-                            d("log", "update2 - ${image.url} }")
                             flow { emit(ResultOf.Success<String>()) }
                         }
                         override fun onCancelled(error: DatabaseError) {

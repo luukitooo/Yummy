@@ -43,13 +43,13 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
             startActivity(Intent(this@ProfileFragment.requireContext(), AuthActivity::class.java))
         }
 
-        binding.btnSelectImage.setOnClickListener {
-            selectImage()
-        }
-
-        binding.btnUpdate.setOnClickListener {
-            uploadImage()
-        }
+//        binding.btnSelectImage.setOnClickListener {
+//            selectImage()
+//        }
+//
+//        binding.btnUpdate.setOnClickListener {
+//            uploadImage()
+//        }
     }
 
     private fun selectImage() {
@@ -112,7 +112,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
     private fun showData() {
         val userName = binding.tvUsername
         val email = binding.tvEmail
-        viewModel.showRealtimeData(userName, email, binding.imgProfileImage)
+        viewModel.showRealtimeData(userName, email)
     }
 
     override fun observers() {

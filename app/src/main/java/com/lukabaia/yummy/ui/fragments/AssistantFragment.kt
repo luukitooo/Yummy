@@ -1,5 +1,6 @@
 package com.lukabaia.yummy.ui.fragments
 
+import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.lifecycleScope
 import com.lukabaia.yummy.adapter.MessagesAdapter
 import com.lukabaia.yummy.databinding.FragmentAssistantBinding
@@ -43,6 +44,9 @@ class AssistantFragment :
                     text = message
                 )
             }
+        }
+        etMessage.doOnTextChanged { text, _, _, _ ->
+            btnSend.isEnabled = !text.isNullOrEmpty()
         }
     }
 
