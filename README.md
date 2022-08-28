@@ -8,6 +8,7 @@ This is an app that will help you find food recipes. It also has an assistant th
 
 ## Used in Project:
 - Firebase Auth
+- Firebase Storage
 - Firebase Realtime Database
 - Retrofit
 - Room
